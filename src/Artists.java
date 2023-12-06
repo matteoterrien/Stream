@@ -21,6 +21,7 @@ public class Artists {
         }
     }
 
+    public Artist createArtist() { return new Artist(); }
     public void setArtists(HashMap<Integer, Artist> artists) {
         this.artists = artists;
     }

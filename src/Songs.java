@@ -6,16 +6,14 @@ public class Songs {
     public HashMap<Integer, Song> songs = new HashMap<>();
 
     public class Song {
-        private int ID;
+        private int songID;
         private String name;
         private float length;
         private Date date;
         private BigInteger audioFile;
         private int artistID;
 
-        public void setID(int id) {
-            this.ID = id;
-        }
+        public void setSongID(int songID) { this.songID = songID; }
         public void setName(String name) {
             this.name = name;
         }
@@ -31,9 +29,7 @@ public class Songs {
         public void setArtistID(int artistID) {
             this.artistID = artistID;
         }
-        public int getID() {
-            return ID;
-        }
+        public int getSongID() { return songID; }
         public String getName() {
             return name;
         }
@@ -50,12 +46,12 @@ public class Songs {
             return artistID;
         }
     }
-
+    public Song createSong() { return new Song(); }
     public void setSongs(HashMap<Integer, Song> songs) {
         this.songs = songs;
     }
     public void addSongs(Song S) {
-        songs.put(S.ID, S);
+        songs.put(S.songID, S);
     }
     public HashMap<Integer, Song> getSongs() {
         return songs;

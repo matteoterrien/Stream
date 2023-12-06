@@ -5,14 +5,14 @@ public class Albums {
     public HashMap<Integer, Album> albums = new HashMap<>();
     public class Album {
         private int albumID;
+        private String name;
         private int artistID;
         private Date releaseDate;
         private String imageURL;
         private String genre;
 
-        public void setAlbumID(int albumID) {
-            this.albumID = albumID;
-        }
+        public void setAlbumID(int albumID) { this.albumID = albumID; }
+        public void setName(String name) { this.name = name; }
         public void setArtistID(int artistID) {
             this.artistID = artistID;
         }
@@ -25,9 +25,8 @@ public class Albums {
         public void setGenre(String genre) {
             this.genre = genre;
         }
-        public int getAlbumID() {
-            return albumID;
-        }
+        public int getAlbumID() { return albumID; }
+        public String getName() { return name; }
         public int getArtistID() {
             return artistID;
         }
@@ -42,6 +41,7 @@ public class Albums {
         }
     }
 
+    public Album createAlbum() { return new Album(); }
     public void setAlbums(HashMap<Integer, Album> albums) {
         this.albums = albums;
     }

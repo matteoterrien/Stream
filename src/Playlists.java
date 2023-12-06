@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Playlists {
@@ -5,8 +6,7 @@ public class Playlists {
     public class Playlist {
         private int playlistID;
         private String playlistTitle;
-        private int userID;
-        private String imageURL;
+        private ArrayList<Songs.Song> songs;
 
         public void setPlaylistID(int playlistID) {
             this.playlistID = playlistID;
@@ -14,26 +14,19 @@ public class Playlists {
         public void setPlaylistTitle(String playlistTitle) {
             this.playlistTitle = playlistTitle;
         }
-        public void setUserID(int userID) {
-            this.userID = userID;
-        }
-        public void setImageURL(String imageURL) {
-            this.imageURL = imageURL;
-        }
+        public void setSongs(ArrayList<Songs.Song> songs) { this.songs = songs; }
         public int getPlaylistID() {
             return playlistID;
         }
         public String getPlaylistTitle() {
             return playlistTitle;
         }
-        public int getUserID() {
-            return userID;
-        }
-        public String getImageURL() {
-            return imageURL;
+        public ArrayList<Songs.Song> getPlaylist() {
+            return songs;
         }
     }
 
+    public Playlist createPlaylist() { return new Playlist(); }
     public void setPlaylists(HashMap<Integer, Playlist> playlists) {
         this.playlists = playlists;
     }

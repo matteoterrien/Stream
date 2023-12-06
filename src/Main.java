@@ -9,7 +9,6 @@ public class Main {
     public Songs songs = new Songs();
     public Artists artists = new Artists();
     public Albums albums = new Albums();
-    public Users users = new Users();
     public Playlists playlists = new Playlists();
     public static void main(String[] args) throws Exception {
         System.out.println("Beginning");
