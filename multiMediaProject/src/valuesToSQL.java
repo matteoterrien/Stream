@@ -6,17 +6,16 @@ import java.lang.String;
 
 public class valuesToSQL {
 
-
    public Songs songs = new Songs();
    public Artists artists = new Artists();
    public Albums albums = new Albums();
    public Playlists playlists = new Playlists();
 
-
    public void sendSongValues() throws SQLException {
        String str = "INSERT INTO Songs (songID, name, length, date) VALUES ";
        for (int i = 0; i < songs.getSongs().size(); i++) {
            Songs.Song song = songs.songs.get(i);
+           System.out.println(song.getName());
            str += "(" + song.getSongID() + ", "
                    + song.getName() + ", "
                    + song.getLength() + ", "

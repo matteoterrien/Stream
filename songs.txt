@@ -38,14 +38,14 @@ Brain Damage,Pink Floyd,Dark Side of the Moon,3:46,1973-03-01,Progressive Rock
 Eclipse,Pink Floyd,Dark Side of the Moon,2:10,1973-03-01,Progressive Rock
 
 Perth,Bon Iver,Bon Iver,4:22,2011-06-17,Indie Folk
-Minnesota, WI,Bon Iver,Bon Iver,3:52,2011-06-17,Indie Folk
+Minnesota WI,Bon Iver,Bon Iver,3:52,2011-06-17,Indie Folk
 Holocene,Bon Iver,Bon Iver,5:36,2011-06-17,Indie Folk
 Towers,Bon Iver,Bon Iver,3:08,2011-06-17,Indie Folk
 Michicant,Bon Iver,Bon Iver,3:45,2011-06-17,Indie Folk
-Hinnom, TX,Bon Iver,Bon Iver,2:45,2011-06-17,Indie Folk
+Hinnom TX,Bon Iver,Bon Iver,2:45,2011-06-17,Indie Folk
 Wash.,Bon Iver,Bon Iver,4:58,2011-06-17,Indie Folk
 Calgary,Bon Iver,Bon Iver,4:10,2011-06-17,Indie Folk
-Lisbon, OH,Bon Iver,Bon Iver,1:33,2011-06-17,Indie Folk
+Lisbon OH,Bon Iver,Bon Iver,1:33,2011-06-17,Indie Folk
 Beth/Rest,Bon Iver,Bon Iver,5:16,2011-06-17,Indie Folk
 
 Planet Telex,Radiohead,The Bends,4:19,1995-03-13,Alternative Rock
@@ -116,7 +116,7 @@ God Save the Queen,Queen,A Night at the Opera,1:15,1975-11-21,Rock
 
 Like a Rolling Stone,Bob Dylan,Highway 61 Revisited,6:13,1965-08-30,Folk Rock
 Tombstone Blues,Bob Dylan,Highway 61 Revisited,5:58,1965-08-30,Folk Rock
-It Takes a Lot to Laugh, It Takes a Train to Cry,Bob Dylan,Highway 61 Revisited,4:09,1965-08-30,Folk Rock
+It Takes a Lot to Laugh It Takes a Train to Cry,Bob Dylan,Highway 61 Revisited,4:09,1965-08-30,Folk Rock
 From a Buick 6,Bob Dylan,Highway 61 Revisited,3:19,1965-08-30,Folk Rock
 Ballad of a Thin Man,Bob Dylan,Highway 61 Revisited,5:58,1965-08-30,Folk Rock
 Queen Jane Approximately,Bob Dylan,Highway 61 Revisited,5:31,1965-08-30,Folk Rock
