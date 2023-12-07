@@ -16,7 +16,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
-public class albumWindow {
+public class albumWindow{
 
     @FXML
     private ObservableList<ListView<String>> listViews = FXCollections.observableArrayList();
@@ -39,6 +39,9 @@ public class albumWindow {
 
     @FXML
     private Menu backButton;
+
+    @FXML
+    private Label consoleOutput;
 
     @FXML
     private Button descending;
@@ -96,7 +99,7 @@ public class albumWindow {
 
     @FXML
     private TextField songText;
-
+    
     public void initialize() {
         // Add your ListView instances to the observable lists during initialization
         listViews.addAll(list1, list2, list3, list4, list5, list6, list7, list8, list9, list10, list11, list12);
@@ -248,12 +251,12 @@ public class albumWindow {
 
         if (playlistName.isEmpty() || songName.isEmpty()) {
             // Display an error message or take appropriate action if fields are empty
-            System.out.println("Both Playlist and Song Text must be provided.");
+            consoleOutput.setText("Both Playlist and Song Text must be provided.");
             // You might want to show a label or display a dialog to inform the user.
         } else {
             // Both fields have data, proceed with your query or other actions
             // Example: Execute your database query or perform other actions
-            System.out.println("Playlist: " + playlistName + ", Song Text: " + songName);
+            consoleOutput.setText("Insert successfull");
             // databaseAccess.addSongToPlaylist(playlistName, songName);
         }
     }
