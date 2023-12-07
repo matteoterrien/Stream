@@ -4,12 +4,15 @@ import java.util.List;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Menu;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
@@ -26,34 +29,7 @@ public class albumWindow {
     private Button ZtoA;
 
     @FXML
-    private Button add1;
-
-    @FXML
-    private Button add10;
-
-    @FXML
-    private Button add2;
-
-    @FXML
-    private Button add3;
-
-    @FXML
-    private Button add4;
-
-    @FXML
-    private Button add5;
-
-    @FXML
-    private Button add6;
-
-    @FXML
-    private Button add7;
-
-    @FXML
-    private Button add8;
-
-    @FXML
-    private Button add9;
+    private Button add;
 
     @FXML
     private ImageView albumImg;
@@ -71,13 +47,25 @@ public class albumWindow {
     private Label errorMessage;
 
     @FXML
+    private ComboBox<String> fieldComboBox;
+
+    @FXML
     private Menu homeButton;
+
+    @FXML
+    private TextField limit;
 
     @FXML
     private ListView<String> list1;
 
     @FXML
     private ListView<String> list10;
+
+    @FXML
+    private ListView<String> list11;
+
+    @FXML
+    private ListView<String> list12;
 
     @FXML
     private ListView<String> list2;
@@ -104,38 +92,14 @@ public class albumWindow {
     private ListView<String> list9;
 
     @FXML
-    private TextField playlist1;
+    private TextField playlist;
 
     @FXML
-    private TextField playlist10;
-
-    @FXML
-    private TextField playlist2;
-
-    @FXML
-    private TextField playlist3;
-
-    @FXML
-    private TextField playlist4;
-
-    @FXML
-    private TextField playlist5;
-
-    @FXML
-    private TextField playlist6;
-
-    @FXML
-    private TextField playlist7;
-
-    @FXML
-    private TextField playlist8;
-
-    @FXML
-    private TextField playlist9;
+    private TextField songText;
 
     public void initialize() {
         // Add your ListView instances to the observable lists during initialization
-        listViews.addAll(list1, list2, list3, list4, list5, list6, list7, list8, list9, list10);
+        listViews.addAll(list1, list2, list3, list4, list5, list6, list7, list8, list9, list10, list11, list12);
 
         // Hide all ImageViews and ListViews initially
         hideAll();
@@ -151,17 +115,8 @@ public class albumWindow {
 
     public void handleBackButton() {
         // Handle back button click
-        Stage stage = (Stage) add1.getScene().getWindow(); // Get the current stage
+        Stage stage = (Stage) add.getScene().getWindow(); // Get the current stage
         stage.close(); // Close the current stage
-
-        // Platform.runLater(() -> {
-        // try {
-        // new homeWindowClass().start(new Stage());
-        // } catch (Exception e) {
-        // e.printStackTrace();
-        // }
-        // });
-        // Launch a new instance of HomeWindowClass
         homeWindowClass homeWindow = new homeWindowClass();
         try {
             homeWindow.start(new Stage());
@@ -170,23 +125,90 @@ public class albumWindow {
         }
     }
 
-    public void setAlbumData(String albumName, albumWindow controller){
+    public void handleAtoZButton() {
+        List<List<String>> songs = new ArrayList<>();
+        int limit = getLimitValue();
+        if (limit != -1) {
+            songs = databaseAccess.sortAlbumsBy(albumName, "songName", "ASC", limit);
+        } else {
+            songs = databaseAccess.sortAlbumsBy(albumName, "songName", "ASC", 12);
+        }
+        System.out.println(songs);
+        populateListViews(songs);
+    }
+
+    public void handleZtoAButton() {
+        List<List<String>> songs = new ArrayList<>();
+        int limit = getLimitValue();
+        if (limit != -1) {
+            songs = databaseAccess.sortAlbumsBy(albumName, "songName", "DESC", limit);
+        } else {
+            songs = databaseAccess.sortAlbumsBy(albumName, "songName", "DESC", 12);
+        }
+        System.out.println(songs);
+        populateListViews(songs);
+    }
+
+    public void handleAscendingButton() {
+        List<List<String>> songs = new ArrayList<>();
+        int limit = getLimitValue();
+        if (limit != -1) {
+            songs = databaseAccess.sortAlbumsBy(albumName, "length", "ASC", limit);
+        } else {
+            songs = databaseAccess.sortAlbumsBy(albumName, "songName", "ASC", 12);
+        }
+        System.out.println(songs);
+        populateListViews(songs);
+    }
+
+    public void handleDescendingButton() {
+        List<List<String>> songs = new ArrayList<>();
+        int limit = getLimitValue();
+        if (limit != -1) {
+            songs = databaseAccess.sortAlbumsBy(albumName, "length", "DESC", limit);
+        } else {
+            songs = databaseAccess.sortAlbumsBy(albumName, "length", "DESC", 12);
+        }
+        System.out.println(songs);
+        populateListViews(songs);
+    }
+
+    public void setAlbumData(String albumName, albumWindow controller) {
         List<List<String>> songs = new ArrayList<>();
         songs = databaseAccess.getSongListForAlbum(albumName);
         System.out.println("got here before populateList");
-        populateListViews(songs, controller);
+        populateListViews(songs);
+        Image albumImage = new Image(getClass().getResourceAsStream(databaseAccess.getAlbumCover(albumName)));
+        albumImg.setImage(albumImage);
         System.out.println(songs);
     }
 
-    public void insertData(int index, String data, albumWindow controller) {
-        System.out.println("data is" + index + data + controller);
+    public void insertData(int index, String data) {
+        System.out.println("data is" + index + data);
         Platform.runLater(() -> {
             // Insert data into the corresponding ListView based on the index
-            System.out.println(controller.listViews.get(index).getItems().add(data));
-    
+            listViews.get(index).getItems().add(data);
+
             // Set visibility to true for the corresponding ImageView and ListView
-            controller.showData(index, true);
+            showData(index, true);
         });
+    }
+
+    public Integer getLimitValue() {
+        // Get the value from the TextField
+        String limitValue = limit.getText();
+
+        // Convert the value to an integer if needed
+        int limitInt = -1;
+        try {
+            limitInt = Integer.parseInt(limitValue);
+
+        } catch (NumberFormatException e) {
+            // Handle the case where the entered text is not a valid integer
+            System.out.println("Invalid limit value: " + limitValue);
+
+        }
+        return limitInt;
     }
 
     public void showData(int index, boolean show) {
@@ -199,17 +221,41 @@ public class albumWindow {
         this.albumName = albumName;
     }
 
-    public void populateListViews(List<List<String>> songs, albumWindow controller) {
+    public void clearAll() {
+        // Clear data from all ListViews
+        for (ListView<String> listView : listViews) {
+            listView.getItems().clear();
+        }
+    }
+
+    public void populateListViews(List<List<String>> songs) {
+        clearAll();
         for (int i = 0; i < songs.size(); i++) {
             List<String> curSongData = songs.get(i);
             System.out.println("got here");
             for (String data : curSongData) {
                 final int index = i; // need to make it final to use inside runLater
                 Platform.runLater(() -> {
-                insertData(index, data, controller);
+                    insertData(index, data);
                 });
             }
         }
-
     }
+
+    public void handleAddButton(ActionEvent event) {
+        String playlistName = playlist.getText();
+        String songName = songText.getText();
+
+        if (playlistName.isEmpty() || songName.isEmpty()) {
+            // Display an error message or take appropriate action if fields are empty
+            System.out.println("Both Playlist and Song Text must be provided.");
+            // You might want to show a label or display a dialog to inform the user.
+        } else {
+            // Both fields have data, proceed with your query or other actions
+            // Example: Execute your database query or perform other actions
+            System.out.println("Playlist: " + playlistName + ", Song Text: " + songName);
+            // databaseAccess.addSongToPlaylist(playlistName, songName);
+        }
+    }
+
 }
