@@ -74,46 +74,33 @@
     </MenuBar>
     <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="474.0" prefWidth="748.0" VBox.vgrow="ALWAYS">
       <children>
-            <Button fx:id="AtoZ" layoutX="26.0" layoutY="189.0" mnemonicParsing="false" text="Alphabetical A-Z" />
-            <Button fx:id="descending" layoutX="15.0" layoutY="292.0" mnemonicParsing="false" text="Duration Descending" />
-            <Button fx:id="ascending" layoutX="19.0" layoutY="257.0" mnemonicParsing="false" text="Duration Ascending" />
+            <Button fx:id="AtoZ" layoutX="26.0" layoutY="189.0" mnemonicParsing="false" onAction="#handleAtoZButton" text="Alphabetical A-Z" />
+            <Button fx:id="descending" layoutX="15.0" layoutY="292.0" mnemonicParsing="false" onAction="#handleDescendingButton" text="Duration Descending" />
+            <Button fx:id="ascending" layoutX="19.0" layoutY="257.0" mnemonicParsing="false" onAction="#handleAscendingButton" text="Duration Ascending" />
             <Separator layoutX="151.0" layoutY="4.0" orientation="VERTICAL" prefHeight="526.0" prefWidth="3.0" />
             <ImageView fx:id="albumImg" fitHeight="125.0" fitWidth="125.0" layoutX="18.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
-            <ListView fx:id="list1" layoutX="170.0" layoutY="92.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="110.0" prefWidth="100.0" stylesheets="@styles.css" />
-            <ListView fx:id="list2" layoutX="290.0" layoutY="92.0" prefHeight="110.0" prefWidth="100.0" stylesheets="@styles.css" />
-            <ListView fx:id="list3" layoutX="410.0" layoutY="92.0" prefHeight="110.0" prefWidth="100.0" stylesheets="@styles.css" />
-            <ListView fx:id="list4" layoutX="527.0" layoutY="92.0" prefHeight="110.0" prefWidth="100.0" stylesheets="@styles.css" />
-            <ListView fx:id="list5" layoutX="650.0" layoutY="92.0" prefHeight="110.0" prefWidth="100.0" stylesheets="@styles.css" />
-            <ListView fx:id="list6" layoutX="170.0" layoutY="305.0" prefHeight="110.0" prefWidth="100.0" stylesheets="@styles.css" />
-            <ListView fx:id="list7" layoutX="290.0" layoutY="305.0" prefHeight="110.0" prefWidth="100.0" stylesheets="@styles.css" />
-            <ListView fx:id="list8" layoutX="410.0" layoutY="305.0" prefHeight="110.0" prefWidth="100.0" stylesheets="@styles.css" />
-            <ListView fx:id="list9" layoutX="527.0" layoutY="305.0" prefHeight="110.0" prefWidth="100.0" stylesheets="@styles.css" />
-            <ListView fx:id="list10" layoutX="650.0" layoutY="305.0" prefHeight="110.0" prefWidth="100.0" stylesheets="@styles.css" />
-            <Button fx:id="ZtoA" layoutX="26.0" layoutY="225.0" mnemonicParsing="false" text="Alphabetical Z-A" />
-            <TextField fx:id="playlist1" layoutX="170.0" layoutY="244.0" prefHeight="26.0" prefWidth="100.0" promptText="Enter Playlist" />
-            <Button fx:id="add1" layoutX="170.0" layoutY="210.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="100.0" text="Add song to" />
-            <Button fx:id="add2" layoutX="290.0" layoutY="210.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="100.0" text="Add song to" />
-            <TextField fx:id="playlist2" layoutX="290.0" layoutY="244.0" prefHeight="26.0" prefWidth="100.0" promptText="Enter Playlist" />
-            <TextField fx:id="playlist3" layoutX="410.0" layoutY="244.0" prefHeight="26.0" prefWidth="100.0" promptText="Enter Playlist" />
-            <Button fx:id="add3" layoutX="410.0" layoutY="210.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="100.0" text="Add song to" />
-            <Button fx:id="add4" layoutX="527.0" layoutY="210.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="100.0" text="Add song to" />
-            <TextField fx:id="playlist4" layoutX="527.0" layoutY="244.0" prefHeight="26.0" prefWidth="100.0" promptText="Enter Playlist" />
-            <Button fx:id="add5" layoutX="650.0" layoutY="210.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="100.0" text="Add song to" />
-            <TextField fx:id="playlist6" layoutX="170.0" layoutY="455.0" prefHeight="26.0" prefWidth="100.0" promptText="Enter Playlist" />
-            <Button fx:id="add6" layoutX="170.0" layoutY="422.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="100.0" text="Add song to" />
-            <Button fx:id="add7" layoutX="290.0" layoutY="422.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="100.0" text="Add song to" />
-            <TextField fx:id="playlist7" layoutX="290.0" layoutY="455.0" prefHeight="26.0" prefWidth="100.0" promptText="Enter Playlist" />
-            <Button fx:id="add8" layoutX="410.0" layoutY="422.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="100.0" text="Add song to" />
-            <TextField fx:id="playlist8" layoutX="410.0" layoutY="455.0" prefHeight="26.0" prefWidth="100.0" promptText="Enter Playlist" />
-            <Button fx:id="add9" layoutX="527.0" layoutY="422.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="100.0" text="Add song to" />
-            <TextField fx:id="playlist9" layoutX="527.0" layoutY="455.0" prefHeight="26.0" prefWidth="100.0" promptText="Enter Playlist" />
-            <Button fx:id="add10" layoutX="650.0" layoutY="422.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="100.0" text="Add song to" />
-            <TextField fx:id="playlist10" layoutX="650.0" layoutY="455.0" prefHeight="26.0" prefWidth="100.0" promptText="Enter Playlist" />
-            <TextField fx:id="playlist5" layoutX="650.0" layoutY="244.0" prefHeight="26.0" prefWidth="100.0" promptText="Enter Playlist" />
+            <ListView fx:id="list1" layoutX="160.0" layoutY="40.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="150.0" prefWidth="150.0" stylesheets="@albumStyles.css" />
+            <ListView fx:id="list2" layoutX="320.0" layoutY="40.0" prefHeight="150.0" prefWidth="150.0" stylesheets="@albumStyles.css" />
+            <ListView fx:id="list3" layoutX="480.0" layoutY="40.0" prefHeight="150.0" prefWidth="150.0" stylesheets="@albumStyles.css" />
+            <ListView fx:id="list4" layoutX="640.0" layoutY="40.0" prefHeight="150.0" prefWidth="150.0" stylesheets="@albumStyles.css" />
+            <ListView fx:id="list5" layoutX="160.0" layoutY="200.0" prefHeight="150.0" prefWidth="150.0" stylesheets="@albumStyles.css" />
+            <ListView fx:id="list6" layoutX="320.0" layoutY="200.0" prefHeight="150.0" prefWidth="150.0" stylesheets="@albumStyles.css" />
+            <ListView fx:id="list7" layoutX="480.0" layoutY="200.0" prefHeight="150.0" prefWidth="150.0" stylesheets="@albumStyles.css" />
+            <ListView fx:id="list8" layoutX="640.0" layoutY="200.0" prefHeight="150.0" prefWidth="150.0" stylesheets="@albumStyles.css" />
+            <ListView fx:id="list9" layoutX="160.0" layoutY="360.0" prefHeight="150.0" prefWidth="150.0" stylesheets="@albumStyles.css" />
+            <ListView fx:id="list10" layoutX="320.0" layoutY="360.0" prefHeight="150.0" prefWidth="150.0" stylesheets="@albumStyles.css" />
+            <Button fx:id="ZtoA" layoutX="26.0" layoutY="225.0" mnemonicParsing="false" onAction="#handleZtoAButton" text="Alphabetical Z-A" />
+            <TextField fx:id="playlist" layoutX="30.0" layoutY="467.0" prefHeight="26.0" prefWidth="100.0" promptText="Enter Playlist" />
+            <Button fx:id="add" layoutX="30.0" layoutY="497.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="100.0" text="Insert Song" />
             <Label layoutX="170.0" layoutY="14.0" text="Album Songs" />
             <Label layoutX="56.0" layoutY="158.0" text="Order By" />
             <Label fx:id="errorMessage" layoutX="157.0" layoutY="495.0" prefHeight="17.0" prefWidth="639.0" />
+            <TextField fx:id="limit" layoutX="47.0" layoutY="334.0" prefHeight="26.0" prefWidth="66.0" promptText="Set Limit" />
+            <ListView fx:id="list11" layoutX="480.0" layoutY="360.0" prefHeight="150.0" prefWidth="150.0" stylesheets="@albumStyles.css" />
+            <ListView fx:id="list12" layoutX="640.0" layoutY="360.0" prefHeight="150.0" prefWidth="150.0" stylesheets="@albumStyles.css" />
+            <TextField fx:id="songText" layoutX="30.0" layoutY="435.0" prefHeight="26.0" prefWidth="100.0" promptText="Enter Song" />
       </children>
     </AnchorPane>
   </children>
 </VBox>
+
