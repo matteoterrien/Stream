@@ -24,9 +24,6 @@ public class homeWindow {
     private ImageView img1;
 
     @FXML
-    private ImageView img10;
-
-    @FXML
     private ImageView img2;
 
     @FXML
@@ -47,14 +44,10 @@ public class homeWindow {
     @FXML
     private ImageView img8;
 
-    @FXML
-    private ImageView img9;
 
     @FXML
     private ListView<String> list1;
 
-    @FXML
-    private ListView<String> list10;
 
     @FXML
     private ListView<String> list2;
@@ -78,9 +71,6 @@ public class homeWindow {
     private ListView<String> list8;
 
     @FXML
-    private ListView<String> list9;
-
-    @FXML
     private Button searchAlbum;
 
     @FXML
@@ -99,9 +89,10 @@ public class homeWindow {
     private TextField searchSongField;
 
     public void initialize() {
-        // Add your ImageView and ListView instances to the observable lists during initialization
-        imageViews.addAll(img1, img2, img3, img4, img5, img6, img7, img8, img9, img10);
-        listViews.addAll(list1, list2, list3, list4, list5, list6, list7, list8, list9, list10);
+        // Add your ImageView and ListView instances to the observable lists during
+        // initialization
+        imageViews.addAll(img1, img2, img3, img4, img5, img6, img7, img8);
+        listViews.addAll(list1, list2, list3, list4, list5, list6, list7, list8);
 
         // Hide all ImageViews and ListViews initially
         hideAll();
@@ -139,12 +130,12 @@ public class homeWindow {
 
         openAlbumWindow(albumToSearch, (Stage) list1.getScene().getWindow());
         // Check if the entered album is in the list
-        //if (albumList.contains(albumToSearch)) {
-        //    openAlbumWindow(albumToSearch);
-        //} else {
-        //    // Album not found, show an error message
-        //    System.out.print("Album Not Found " + albumToSearch);
-        //}
+        // if (albumList.contains(albumToSearch)) {
+        // openAlbumWindow(albumToSearch);
+        // } else {
+        // // Album not found, show an error message
+        // System.out.print("Album Not Found " + albumToSearch);
+        // }
     }
 
     public void openAlbumWindow(String albumName, Stage currentWindow) {
