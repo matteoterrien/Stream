@@ -30,11 +30,8 @@ public class homeWindowClass extends Application {
             controller.insertData(0, "album: The 20/20 Experience");
             controller.insertData(0, "artist: Justin Timberlake");
             controller.insertImage(0, "The 20:20 experience.jpg");
-            
-            controller.insertData(1, "cat");
 
-            ArrayList<String> albumList = new ArrayList<>();
-            albumList.add("The Dark Side of the Moon");
+            controller.insertData(1, "cat");
 
             // controller.clearAll();
             Scene scene = new Scene(root, 800, 600);
@@ -77,10 +74,10 @@ public class homeWindowClass extends Application {
                 if (albumID > 0) {
                     Platform.runLater(() -> currentWindow.close());
                     // currentWindow.close();
-                    //albumWindowClass albumWindow = new albumWindowClass(albumName);
+                    // albumWindowClass albumWindow = new albumWindowClass(albumName);
                     try {
                         Stage stage = new Stage();
-                        //albumWindow.start(stage);
+                        // albumWindow.start(stage);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
