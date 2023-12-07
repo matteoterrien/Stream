@@ -95,4 +95,6 @@ public class homeWindowClass extends Application {
             e.printStackTrace(); // Handle exceptions appropriately
         }
     }
+
+    
 }
