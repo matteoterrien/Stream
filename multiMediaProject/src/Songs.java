@@ -46,7 +46,9 @@ public class Songs {
             return artistID;
         }
     }
-    public Song createSong() { return new Song(); }
+    public Song createSong() { 
+        return new Song(); 
+    }
     public void setSongs(HashMap<Integer, Song> songs) {
         this.songs = songs;
     }

@@ -2,7 +2,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
-
+import java.lang.String;
 
 public class valuesToSQL {
 
@@ -14,13 +14,13 @@ public class valuesToSQL {
 
 
    public void sendSongValues() throws SQLException {
-       String str = "";
+       String str = "INSERT INTO Songs (songID, name, length, date) VALUES ";
        for (int i = 0; i < songs.getSongs().size(); i++) {
            Songs.Song song = songs.songs.get(i);
-           str += ("(" + song.getSongID() + ", "
+           str += "(" + song.getSongID() + ", "
                    + song.getName() + ", "
                    + song.getLength() + ", "
-                   + song.getDate() + ")");
+                   + song.getDate() + ")";
            if (i < songs.getSongs().size() - 1)
                str += ", ";
        }
@@ -31,10 +31,12 @@ public class valuesToSQL {
                    "jdbc:mysql://ambari-node5.csc.calpoly.edu:3306/musicGroup?user=musicGroup&password=musicCSC365!");
 
 
-           Statement statement = connection.createStatement();
-           statement.executeUpdate("Insert into Songs (songID, name, length, date) values " + str);
-           connection.commit();
-           connection.close();
+            System.out.println(str);
+
+            Statement statement = connection.createStatement();
+            statement.executeUpdate(str);
+            connection.commit();
+            connection.close();
        } catch (Exception e) {
            // might need to catch other exceptions found in slides code
            e.printStackTrace();
