@@ -2,6 +2,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
@@ -136,6 +137,24 @@ public class homeWindow {
         // // Album not found, show an error message
         // System.out.print("Album Not Found " + albumToSearch);
         // }
+    }
+
+    public void handleSearchSong() {
+        String songPrefix = searchSongField.getText().trim();
+        if (!songPrefix.isEmpty()) {
+            Stage currentWindow = (Stage) list1.getScene().getWindow();
+            currentWindow.close();
+            songWindowClass songWindow = new songWindowClass(songPrefix);
+            try {
+                    Stage stage = new Stage();
+                    songWindow.start(stage);
+                    System.out.println(songWindow);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+        } else {
+            System.out.println("insert search text");
+        }
     }
 
     public void openAlbumWindow(String albumName, Stage currentWindow) {
