@@ -1,5 +1,4 @@
 import java.math.BigInteger;
-import java.util.Date;
 import java.util.HashMap;
 
 public class Songs {
@@ -8,8 +7,8 @@ public class Songs {
     public class Song {
         private int songID;
         private String name;
-        private float length;
-        private Date date;
+        private int length;
+        private String date;
         private BigInteger audioFile;
         private int artistID;
 
@@ -17,10 +16,10 @@ public class Songs {
         public void setName(String name) {
             this.name = name;
         }
-        public void setLength(float length) {
+        public void setLength(int length) {
             this.length = length;
         }
-        public void setDate(Date date) {
+        public void setDate(String date) {
             this.date = date;
         }
         public void setAudioFile(BigInteger audioFile) {
@@ -36,7 +35,7 @@ public class Songs {
         public float getLength() {
             return length;
         }
-        public Date getDate() {
+        public String getDate() {
             return date;
         }
         public BigInteger getAudioFile() {

@@ -1,4 +1,3 @@
-import java.util.Date;
 import java.util.HashMap;
 
 public class Albums {
@@ -7,7 +6,7 @@ public class Albums {
         private int albumID;
         private String name;
         private int artistID;
-        private Date releaseDate;
+        private String releaseDate;
         private String imageURL;
         private String genre;
 
@@ -16,7 +15,7 @@ public class Albums {
         public void setArtistID(int artistID) {
             this.artistID = artistID;
         }
-        public void setReleaseDate(Date releaseDate) {
+        public void setReleaseDate(String releaseDate) {
             this.releaseDate = releaseDate;
         }
         public void setImageURL(String imageURL) {
@@ -30,7 +29,7 @@ public class Albums {
         public int getArtistID() {
             return artistID;
         }
-        public Date getReleaseDate() {
+        public String getReleaseDate() {
             return releaseDate;
         }
         public String getImageURL() {

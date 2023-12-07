@@ -4,6 +4,7 @@ import java.util.HashMap;
 public class Playlists {
     public HashMap<Integer, Playlist> playlists = new HashMap<>();
     public class Playlist {
+        
         private int playlistID;
         private String playlistTitle;
         private ArrayList<Songs.Song> songs;
@@ -14,7 +15,9 @@ public class Playlists {
         public void setPlaylistTitle(String playlistTitle) {
             this.playlistTitle = playlistTitle;
         }
-        public void setSongs(ArrayList<Songs.Song> songs) { this.songs = songs; }
+        public void setSongs(ArrayList<Songs.Song> songs) { 
+            this.songs = songs; 
+        }
         public int getPlaylistID() {
             return playlistID;
         }

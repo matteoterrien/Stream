@@ -2,17 +2,16 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Random;
 
 public class ReadFile {
 
-    public Songs songs = new Songs();
-    public Albums albums = new Albums();
-    public Artists artists = new Artists();
-    public Playlists playlists = new Playlists();
+    public static Songs songs = new Songs();
+    public static Artists artists = new Artists();
+    public static Albums albums = new Albums();
+    public static Playlists playlists = new Playlists();
+
     BufferedReader reader = new BufferedReader(new FileReader("songs.txt"));
 
     public void readFile() throws IOException, ParseException {
@@ -29,15 +28,12 @@ public class ReadFile {
             String[] strLength = info[3].split(":");
             int length = Integer.parseInt(strLength[0]) * Integer.parseInt(strLength[1]);
 
-            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-            Date date = dateFormat.parse(info[4]);
-
             Songs.Song song = songs.createSong();
             song.setName(info[0]);
 
             song.setLength(length);
             song.setSongID(songs.getSongs().size());
-            song.setDate(date);
+            song.setDate(info[4]);
 
             Artists.Artist artist = artists.createArtist();
             artist.setName(info[1]);
@@ -48,7 +44,7 @@ public class ReadFile {
             Albums.Album album = albums.createAlbum();
             album.setName(info[2]);
             album.setAlbumID(albums.getAlbums().size());
-            album.setReleaseDate(date);
+            album.setReleaseDate(info[4]);
             album.setGenre(info[5]);
 
             songs.addSongs(song);
