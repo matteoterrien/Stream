@@ -12,11 +12,10 @@ public class valuesToSQL {
     Playlists playlists = ReadFile.playlists;
 
     public void sendSongValues() throws SQLException {
-       String str = "INSERT INTO Songs (songID, name, length, date) VALUES ";
+       String str = "INSERT INTO Songs (name, length, date) VALUES ";
        for (int i = 0; i < songs.getSongs().size(); i++) {
            Songs.Song song = songs.songs.get(i);
-           str += "(" + song.getSongID() + ", "
-                   + song.getName() + ", "
+           str += "(" + song.getName() + ", "
                    + song.getLength() + ", "
                    + song.getDate() + ")";
            if (i < songs.getSongs().size() - 1)
@@ -33,7 +32,6 @@ public class valuesToSQL {
 
             Statement statement = connection.createStatement();
             statement.executeUpdate(str);
-            connection.commit();
             connection.close();
        } catch (Exception e) {
            // might need to catch other exceptions found in slides code
@@ -46,8 +44,7 @@ public class valuesToSQL {
        String str = "";
        for (int i = 0; i < artists.getArtists().size(); i++) {
            Artists.Artist artist = artists.artists.get(i);
-           str += ("(" + artist.getArtistID() + ", "
-                   + artist.getName() + ")");
+           str += ("(" + artist.getName() + ")");
            if (i < artists.getArtists().size() - 1)
                str += ", ";
        }
@@ -60,7 +57,6 @@ public class valuesToSQL {
 
            Statement statement = connection.createStatement();
            statement.executeUpdate("Insert into Artists (artistID, name) values " + str);
-           connection.commit();
            connection.close();
        } catch (Exception e) {
            // might need to catch other exceptions found in slides code
@@ -73,8 +69,7 @@ public class valuesToSQL {
        String str = "";
        for (int i = 0; i < albums.getAlbums().size(); i++) {
            Albums.Album album = albums.albums.get(i);
-           str += ("(" + album.getAlbumID() + ", "
-                   + album.getArtistID() + ", "
+           str += ("(" + album.getArtistID() + ", "
                    + album.getReleaseDate() + ", "
                    + album.getName() + ", "
                    + album.getGenre() + ")");

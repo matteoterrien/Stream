@@ -1,157 +1,157 @@
-Shine On You Crazy Diamond (Pts. 1-5),Pink Floyd,Wish You Were Here,13:31,1975-09-12,Progressive Rock
-Welcome to the Machine,Pink Floyd,Wish You Were Here,7:31,1975-09-12,Progressive Rock
-Have a Cigar,Pink Floyd,Wish You Were Here,5:07,1975-09-12,Progressive Rock
-Wish You Were Here,Pink Floyd,Wish You Were Here,5:34,1975-09-12,Progressive Rock
-Shine On You Crazy Diamond (Pts. 6-9),Pink Floyd,Wish You Were Here,12:27,1975-09-12,Progressive Rock
+'Shine On You Crazy Diamond (Pts. 1-5)','Pink Floyd','Wish You Were Here',13:31,'1975-09-12','Progressive Rock'
+'Welcome to the Machine','Pink Floyd','Wish You Were Here',7:31,'1975-09-12','Progressive Rock'
+'Have a Cigar','Pink Floyd','Wish You Were Here',5:07,'1975-09-12','Progressive Rock'
+'Wish You Were Here','Pink Floyd','Wish You Were Here',5:34,'1975-09-12','Progressive Rock'
+'Shine On You Crazy Diamond (Pts. 6-9)','Pink Floyd','Wish You Were Here',12:27,'1975-09-12','Progressive Rock'
 
-Orange Blood,Mt. Joy,Orange Blood,3:46,2022-06-09,Indie Rock
-Evergreen,Mt. Joy,Orange Blood,2:51,2022-06-09,Indie Rock
-Roly Poly,Mt. Joy,Orange Blood,2:36,2022-06-09,Indie Rock
-Johnson Song,Mt. Joy,Orange Blood,3:43,2022-06-09,Indie Rock
-Don't It Feel Good,Mt. Joy,Orange Blood,4:21,2022-06-09,Indie Rock
-Lemon Tree,Mt. Joy,Orange Blood,4:08,2022-06-09,Indie Rock
-Bang,Mt. Joy,Orange Blood,2:43,2022-06-09,Indie Rock
-Phenomenon,Mt. Joy,Orange Blood,2:53,2022-06-09,Indie Rock
-Ruins,Mt. Joy,Orange Blood,3:34,2022-06-09,Indie Rock
-Bathroom Light,Mt. Joy,Orange Blood,3:08,2022-06-09,Indie Rock
+'Orange Blood','Mt. Joy','Orange Blood',3:46,'2022-06-09','Indie Rock'
+'Evergreen','Mt. Joy','Orange Blood',2:51,'2022-06-09','Indie Rock'
+'Roly Poly','Mt. Joy','Orange Blood',2:36,'2022-06-09','Indie Rock'
+'Johnson Song','Mt. Joy','Orange Blood',3:43,'2022-06-09','Indie Rock'
+'Don\'t It Feel Good','Mt. Joy','Orange Blood',4:21,'2022-06-09','Indie Rock'
+'Lemon Tree','Mt. Joy','Orange Blood',4:08,'2022-06-09','Indie Rock'
+'Bang','Mt. Joy','Orange Blood',2:43,'2022-06-09','Indie Rock'
+'Phenomenon','Mt. Joy','Orange Blood',2:53,'2022-06-09','Indie Rock'
+'Ruins','Mt. Joy','Orange Blood',3:34,'2022-06-09','Indie Rock'
+'Bathroom Light','Mt. Joy','Orange Blood',3:08,'2022-06-09','Indie Rock'
 
-Gone Hollywood,Supertramp,Breakfast in America,5:20,1979-03-29,Progressive Rock
-The Logical Song,Supertramp,Breakfast in America,4:11,1979-03-29,Progressive Rock
-Goodbye Stranger,Supertramp,Breakfast in America,5:50,1979-03-29,Progressive Rock
-Breakfast in America,Supertramp,Breakfast in America,2:39,1979-03-29,Progressive Rock
-Oh Darling,Supertramp,Breakfast in America,4:02,1979-03-29,Progressive Rock
-Take The Long Way Home,Supertramp,Breakfast in America,5:08,1979-03-29,Progressive Rock
-Lord Is It Mine,Supertramp,Breakfast in America,4:10,1979-03-29,Progressive Rock
-Just Another Nervous Wreck,Supertramp,Breakfast in America,4:25,1979-03-29,Progressive Rock
-Casual Conversations,Supertramp,Breakfast in America,2:58,1979-03-29,Progressive Rock
-Child Of Vision,Supertramp,Breakfast in America,7:31,1979-03-29,Progressive Rock
+'Gone Hollywood','Supertramp','Breakfast in America',5:20,'1979-03-29','Progressive Rock'
+'The Logical Song','Supertramp','Breakfast in America',4:11,'1979-03-29','Progressive Rock'
+'Goodbye Stranger','Supertramp','Breakfast in America',5:50,'1979-03-29','Progressive Rock'
+'Breakfast in America','Supertramp','Breakfast in America',2:39,'1979-03-29','Progressive Rock'
+'Oh Darling','Supertramp','Breakfast in America',4:02,'1979-03-29','Progressive Rock'
+'Take The Long Way Home','Supertramp','Breakfast in America',5:08,'1979-03-29','Progressive Rock'
+'Lord Is It Mine','Supertramp','Breakfast in America',4:10,'1979-03-29','Progressive Rock'
+'Just Another Nervous Wreck','Supertramp','Breakfast in America',4:25,'1979-03-29','Progressive Rock'
+'Casual Conversations','Supertramp','Breakfast in America',2:58,'1979-03-29','Progressive Rock'
+'Child Of Vision','Supertramp','Breakfast in America',7:31,'1979-03-29','Progressive Rock'
 
-Speak to Me,Pink Floyd,Dark Side of the Moon,1:05,1973-03-01,Progressive Rock
-Breathe (In the Air),Pink Floyd,Dark Side of the Moon,2:49,1973-03-01,Progressive Rock
-On the Run,Pink Floyd,Dark Side of the Moon,3:45,1973-03-01,Progressive Rock
-Time,Pink Floyd,Dark Side of the Moon,6:53,1973-03-01,Progressive Rock
-The Great Gig in the Sky,Pink Floyd,Dark Side of the Moon,4:43,1973-03-01,Progressive Rock
-Money,Pink Floyd,Dark Side of the Moon,6:22,1973-03-01,Progressive Rock
-Us and Them,Pink Floyd,Dark Side of the Moon,7:49,1973-03-01,Progressive Rock
-Any Colour You Like,Pink Floyd,Dark Side of the Moon,3:26,1973-03-01,Progressive Rock
-Brain Damage,Pink Floyd,Dark Side of the Moon,3:46,1973-03-01,Progressive Rock
-Eclipse,Pink Floyd,Dark Side of the Moon,2:10,1973-03-01,Progressive Rock
+'Speak to Me','Pink Floyd','Dark Side of the Moon',1:05,'1973-03-01','Progressive Rock'
+'Breathe (In the Air)','Pink Floyd','Dark Side of the Moon',2:49,'1973-03-01','Progressive Rock'
+'On the Run','Pink Floyd','Dark Side of the Moon',3:45,'1973-03-01','Progressive Rock'
+'Time','Pink Floyd','Dark Side of the Moon',6:53,'1973-03-01','Progressive Rock'
+'The Great Gig in the Sky','Pink Floyd','Dark Side of the Moon',4:43,'1973-03-01','Progressive Rock'
+'Money','Pink Floyd','Dark Side of the Moon',6:22,'1973-03-01','Progressive Rock'
+'Us and Them','Pink Floyd','Dark Side of the Moon',7:49,'1973-03-01','Progressive Rock'
+'Any Colour You Like','Pink Floyd','Dark Side of the Moon',3:26,'1973-03-01','Progressive Rock'
+'Brain Damage','Pink Floyd','Dark Side of the Moon',3:46,'1973-03-01','Progressive Rock'
+'Eclipse','Pink Floyd','Dark Side of the Moon',2:10,'1973-03-01','Progressive Rock'
 
-Perth,Bon Iver,Bon Iver,4:22,2011-06-17,Indie Folk
-Minnesota WI,Bon Iver,Bon Iver,3:52,2011-06-17,Indie Folk
-Holocene,Bon Iver,Bon Iver,5:36,2011-06-17,Indie Folk
-Towers,Bon Iver,Bon Iver,3:08,2011-06-17,Indie Folk
-Michicant,Bon Iver,Bon Iver,3:45,2011-06-17,Indie Folk
-Hinnom TX,Bon Iver,Bon Iver,2:45,2011-06-17,Indie Folk
-Wash.,Bon Iver,Bon Iver,4:58,2011-06-17,Indie Folk
-Calgary,Bon Iver,Bon Iver,4:10,2011-06-17,Indie Folk
-Lisbon OH,Bon Iver,Bon Iver,1:33,2011-06-17,Indie Folk
-Beth/Rest,Bon Iver,Bon Iver,5:16,2011-06-17,Indie Folk
+'Perth','Bon Iver','Bon Iver',4:22,'2011-06-17','Indie Folk'
+'Minnesota WI','Bon Iver','Bon Iver',3:52,'2011-06-17','Indie Folk'
+'Holocene','Bon Iver','Bon Iver',5:36,'2011-06-17','Indie Folk'
+'Towers','Bon Iver','Bon Iver',3:08,'2011-06-17','Indie Folk'
+'Michicant','Bon Iver','Bon Iver',3:45,'2011-06-17','Indie Folk'
+'Hinnom TX','Bon Iver','Bon Iver',2:45,'2011-06-17','Indie Folk'
+'Wash.','Bon Iver','Bon Iver',4:58,'2011-06-17','Indie Folk'
+'Calgary','Bon Iver','Bon Iver',4:10,'2011-06-17','Indie Folk'
+'Lisbon OH','Bon Iver','Bon Iver',1:33,'2011-06-17','Indie Folk'
+'Beth/Rest','Bon Iver','Bon Iver',5:16,'2011-06-17','Indie Folk'
 
-Planet Telex,Radiohead,The Bends,4:19,1995-03-13,Alternative Rock
-The Bends,Radiohead,The Bends,4:06,1995-03-13,Alternative Rock
-High and Dry,Radiohead,The Bends,4:17,1995-03-13,Alternative Rock
-Fake Plastic Trees,Radiohead,The Bends,4:50,1995-03-13,Alternative Rock
-Bones,Radiohead,The Bends,3:09,1995-03-13,Alternative Rock
-(Nice Dream),Radiohead,The Bends,3:53,1995-03-13,Alternative Rock
-Just,Radiohead,The Bends,3:54,1995-03-13,Alternative Rock
-My Iron Lung,Radiohead,The Bends,4:36,1995-03-13,Alternative Rock
-Bullet Proof ... I Wish I Was,Radiohead,The Bends,3:28,1995-03-13,Alternative Rock
-Black Star,Radiohead,The Bends,4:07,1995-03-13,Alternative Rock
-Sulk,Radiohead,The Bends,3:42,1995-03-13,Alternative Rock
-Street Spririt (Fade Out),Radiohead,The Bends,4:13,1995-03-13,Alternative Rock
+'Planet Telex','Radiohead','The Bends',4:19,'1995-03-13','Alternative Rock'
+'The Bends','Radiohead','The Bends',4:06,'1995-03-13','Alternative Rock'
+'High and Dry','Radiohead','The Bends',4:17,'1995-03-13','Alternative Rock'
+'Fake Plastic Trees','Radiohead','The Bends',4:50,'1995-03-13','Alternative Rock'
+'Bones','Radiohead','The Bends',3:09,'1995-03-13','Alternative Rock'
+'(Nice Dream)','Radiohead','The Bends',3:53,'1995-03-13','Alternative Rock'
+'Just','Radiohead','The Bends',3:54,'1995-03-13','Alternative Rock'
+'My Iron Lung','Radiohead','The Bends',4:36,'1995-03-13','Alternative Rock'
+'Bullet Proof ... I Wish I Was','Radiohead','The Bends',3:28,'1995-03-13','Alternative Rock'
+'Black Star','Radiohead','The Bends',4:07,'1995-03-13','Alternative Rock'
+'Sulk','Radiohead','The Bends',3:42,'1995-03-13','Alternative Rock'
+'Street Spririt (Fade Out)','Radiohead','The Bends',4:13,'1995-03-13','Alternative Rock'
 
-Do I Wanna Know?,Arctic Monkeys,AM,4:32,2013-09-06,Indie Rock
-R U Mine?,Arctic Monkeys,AM,3:21,2013-09-06,Indie Rock
-One for the Road,Arctic Monkeys,AM,3:26,2013-09-06,Indie Rock
-Arabella,Arctic Monkeys,AM,3:27,2013-09-06,Indie Rock
-I Want It All,Arctic Monkeys,AM,3:05,2013-09-06,Indie Rock
-No. 1 Party Anthem,Arctic Monkeys,AM,4:03,2013-09-06,Indie Rock
-Mad Sounds,Arctic Monkeys,AM,3:35,2013-09-06,Indie Rock
-Fireside,Arctic Monkeys,AM,3:01,2013-09-06,Indie Rock
-Why'd You Only Call Me When You're High?,Arctic Monkeys,AM,2:41,2013-09-06,Indie Rock
-Snap Out of It,Arctic Monkeys,AM,3:12,2013-09-06,Indie Rock
-Knee Socks,Arctic Monkeys,AM,4:17,2013-09-06,Indie Rock
-I Wanna Be Yours,Arctic Monkeys,AM,3:04,2013-09-06,Indie Rock
+'Do I Wanna Know?','Arctic Monkeys','AM',4:32,'2013-09-06','Indie Rock'
+'R U Mine?','Arctic Monkeys','AM',3:21,'2013-09-06','Indie Rock'
+'One for the Road','Arctic Monkeys','AM',3:26,'2013-09-06','Indie Rock'
+'Arabella','Arctic Monkeys','AM',3:27,'2013-09-06','Indie Rock'
+'I Want It All','Arctic Monkeys','AM',3:05,'2013-09-06','Indie Rock'
+'No. 1 Party Anthem','Arctic Monkeys','AM',4:03,'2013-09-06','Indie Rock'
+'Mad Sounds','Arctic Monkeys','AM',3:35,'2013-09-06','Indie Rock'
+'Fireside','Arctic Monkeys','AM',3:01,'2013-09-06','Indie Rock'
+'Why\'d You Only Call Me When You\'re High?','Arctic Monkeys','AM',2:41,'2013-09-06','Indie Rock'
+'Snap Out of It','Arctic Monkeys','AM',3:12,'2013-09-06','Indie Rock'
+'Knee Socks','Arctic Monkeys','AM',4:17,'2013-09-06','Indie Rock'
+'I Wanna Be Yours','Arctic Monkeys','AM',3:04,'2013-09-06','Indie Rock'
 
-Come Together,The Beatles,Abbey Road,4:20,1969-09-26,Rock
-Something,The Beatles,Abbey Road,3:03,1969-09-26,Rock
-Maxwell's Silver Hammer,The Beatles,Abbey Road,3:27,1969-09-26,Rock
-Oh! Darling,The Beatles,Abbey Road,3:27,1969-09-26,Rock
-Octopus's Garden,The Beatles,Abbey Road,2:51,1969-09-26,Rock
-I Want You (She's So Heavy),The Beatles,Abbey Road,7:47,1969-09-26,Rock
-Here Comes the Sun,The Beatles,Abbey Road,3:05,1969-09-26,Rock
-Because,The Beatles,Abbey Road,2:45,1969-09-26,Rock
-You Never Give Me Your Money,The Beatles,Abbey Road,4:02,1969-09-26,Rock
-Sun King,The Beatles,Abbey Road,2:26,1969-09-26,Rock
-Mean Mr. Mustard,The Beatles,Abbey Road,1:06,1969-09-26,Rock
-Polythene Pam,The Beatles,Abbey Road,1:12,1969-09-26,Rock
-She Came in Through the Bathroom Window,The Beatles,Abbey Road,1:58,1969-09-26,Rock
-Golden Slumbers,The Beatles,Abbey Road,1:31,1969-09-26,Rock
-Carry That Weight,The Beatles,Abbey Road,1:36,1969-09-26,Rock
-The End,The Beatles,Abbey Road,2:20,1969-09-26,Rock
-Her Majesty,The Beatles,Abbey Road,0:23,1969-09-26,Rock
+'Come Together','The Beatles','Abbey Road',4:20,'1969-09-26','Rock'
+'Something','The Beatles','Abbey Road',3:03,'1969-09-26','Rock'
+'Maxwell\'s Silver Hammer','The Beatles','Abbey Road',3:27,'1969-09-26','Rock'
+'Oh! Darling','The Beatles','Abbey Road',3:27,'1969-09-26','Rock'
+'Octopus\'s Garden','The Beatles','Abbey Road',2:51,'1969-09-26','Rock'
+'I Want You (She\'s So Heavy)','The Beatles','Abbey Road',7:47,'1969-09-26','Rock'
+'Here Comes the Sun','The Beatles','Abbey Road',3:05,'1969-09-26','Rock'
+'Because','The Beatles','Abbey Road',2:45,'1969-09-26','Rock'
+'You Never Give Me Your Money','The Beatles','Abbey Road',4:02,'1969-09-26','Rock'
+'Sun King','The Beatles','Abbey Road',2:26,'1969-09-26','Rock'
+'Mean Mr. Mustard','The Beatles','Abbey Road',1:06,'1969-09-26','Rock'
+'Polythene Pam','The Beatles','Abbey Road',1:12,'1969-09-26','Rock'
+'She Came in Through the Bathroom Window','The Beatles','Abbey Road',1:58,'1969-09-26','Rock'
+'Golden Slumbers','The Beatles','Abbey Road',1:31,'1969-09-26','Rock'
+'Carry That Weight','The Beatles','Abbey Road',1:36,'1969-09-26','Rock'
+'The End','The Beatles','Abbey Road',2:20,'1969-09-26','Rock'
+'Her Majesty','The Beatles','Abbey Road',0:23,'1969-09-26','Rock'
 
-Black Dog,Led Zeppelin,IV,4:54,1971-11-08,Hard Rock
-Rock and Roll,Led Zeppelin,IV,3:40,1971-11-08,Hard Rock
-The Battle of Evermore,Led Zeppelin,IV,5:51,1971-11-08,Hard Rock
-Stairway to Heaven,Led Zeppelin,IV,8:02,1971-11-08,Hard Rock
-Misty Mountain Hop,Led Zeppelin,IV,4:39,1971-11-08,Hard Rock
-Four Sticks,Led Zeppelin,IV,4:44,1971-11-08,Hard Rock
-Going to California,Led Zeppelin,IV,3:32,1971-11-08,Hard Rock
-When the Levee Breaks,Led Zeppelin,IV,7:08,1971-11-08,Hard Rock
+'Black Dog','Led Zeppelin','IV',4:54,'1971-11-08','Hard Rock'
+'Rock and Roll','Led Zeppelin','IV',3:40,'1971-11-08','Hard Rock'
+'The Battle of Evermore','Led Zeppelin','IV',5:51,'1971-11-08','Hard Rock'
+'Stairway to Heaven','Led Zeppelin','IV',8:02,'1971-11-08','Hard Rock'
+'Misty Mountain Hop','Led Zeppelin','IV',4:39,'1971-11-08','Hard Rock'
+'Four Sticks','Led Zeppelin','IV',4:44,'1971-11-08','Hard Rock'
+'Going to California','Led Zeppelin','IV',3:32,'1971-11-08','Hard Rock'
+'When the Levee Breaks','Led Zeppelin','IV',7:08,'1971-11-08','Hard Rock'
 
-Death on Two Legs (Dedicated to...),Queen,A Night at the Opera,3:43,1975-11-21,Rock
-Lazing on a Sunday Afternoon,Queen,A Night at the Opera,1:07,1975-11-21,Rock
-I'm in Love with My Car,Queen,A Night at the Opera,3:05,1975-11-21,Rock
-You're My Best Friend,Queen,A Night at the Opera,2:52,1975-11-21,Rock
-'39,Queen,A Night at the Opera,3:30,1975-11-21,Rock
-Sweet Lady,Queen,A Night at the Opera,4:02,1975-11-21,Rock
-Seaside Rendezvous,Queen,A Night at the Opera,2:15,1975-11-21,Rock
-The Prophet's Song,Queen,A Night at the Opera,8:21,1975-11-21,Rock
-Love of My Life,Queen,A Night at the Opera,3:39,1975-11-21,Rock
-Good Company,Queen,A Night at the Opera,3:26,1975-11-21,Rock
-Bohemian Rhapsody,Queen,A Night at the Opera,5:55,1975-11-21,Rock
-God Save the Queen,Queen,A Night at the Opera,1:15,1975-11-21,Rock
+'Death on Two Legs (Dedicated to...)','Queen','A Night at the Opera',3:43,'1975-11-21','Rock'
+'Lazing on a Sunday Afternoon','Queen','A Night at the Opera',1:07,'1975-11-21','Rock'
+'I\'m in Love with My Car','Queen','A Night at the Opera',3:05,'1975-11-21','Rock'
+'You\'re My Best Friend','Queen','A Night at the Opera',2:52,'1975-11-21','Rock'
+'\'39','Queen','A Night at the Opera',3:30,'1975-11-21','Rock'
+'Sweet Lady','Queen','A Night at the Opera',4:02,'1975-11-21','Rock'
+'Seaside Rendezvous','Queen','A Night at the Opera',2:15,'1975-11-21','Rock'
+'The Prophet\'s Song','Queen','A Night at the Opera',8:21,'1975-11-21','Rock'
+'Love of My Life','Queen','A Night at the Opera',3:39,'1975-11-21','Rock'
+'Good Company','Queen','A Night at the Opera',3:26,'1975-11-21','Rock'
+'Bohemian Rhapsody','Queen','A Night at the Opera',5:55,'1975-11-21','Rock'
+'God Save the Queen','Queen','A Night at the Opera',1:15,'1975-11-21','Rock'
 
-Like a Rolling Stone,Bob Dylan,Highway 61 Revisited,6:13,1965-08-30,Folk Rock
-Tombstone Blues,Bob Dylan,Highway 61 Revisited,5:58,1965-08-30,Folk Rock
-It Takes a Lot to Laugh It Takes a Train to Cry,Bob Dylan,Highway 61 Revisited,4:09,1965-08-30,Folk Rock
-From a Buick 6,Bob Dylan,Highway 61 Revisited,3:19,1965-08-30,Folk Rock
-Ballad of a Thin Man,Bob Dylan,Highway 61 Revisited,5:58,1965-08-30,Folk Rock
-Queen Jane Approximately,Bob Dylan,Highway 61 Revisited,5:31,1965-08-30,Folk Rock
-Highway 61 Revisited,Bob Dylan,Highway 61 Revisited,3:30,1965-08-30,Folk Rock
-Just Like Tom Thumb's Blues,Bob Dylan,Highway 61 Revisited,5:31,1965-08-30,Folk Rock
-Desolation Row,Bob Dylan,Highway 61 Revisited,11:21,1965-08-30,Folk Rock
+'Like a Rolling Stone','Bob Dylan','Highway 61 Revisited',6:13,'1965-08-30','Folk Rock'
+'Tombstone Blues','Bob Dylan','Highway 61 Revisited',5:58,'1965-08-30','Folk Rock'
+'It Takes a Lot to Laugh It Takes a Train to Cry','Bob Dylan','Highway 61 Revisited',4:09,'1965-08-30','Folk Rock'
+'From a Buick 6','Bob Dylan','Highway 61 Revisited',3:19,'1965-08-30','Folk Rock'
+'Ballad of a Thin Man','Bob Dylan','Highway 61 Revisited',5:58,'1965-08-30','Folk Rock'
+'Queen Jane Approximately','Bob Dylan','Highway 61 Revisited',5:31,'1965-08-30','Folk Rock'
+'Highway 61 Revisited','Bob Dylan','Highway 61 Revisited',3:30,'1965-08-30','Folk Rock'
+'Just Like Tom Thumb\'s Blues','Bob Dylan','Highway 61 Revisited',5:31,'1965-08-30','Folk Rock'
+'Desolation Row','Bob Dylan','Highway 61 Revisited',11:21,'1965-08-30','Folk Rock'
 
-Rocks Off,The Rolling Stones,Exile on Main St.,4:31,1972-05-12,Rock
-Rip This Joint,The Rolling Stones,Exile on Main St.,2:23,1972-05-12,Rock
-Shake Your Hips,The Rolling Stones,Exile on Main St.,2:58,1972-05-12,Rock
-Casino Boogie,The Rolling Stones,Exile on Main St.,3:33,1972-05-12,Rock
-Tumbling Dice,The Rolling Stones,Exile on Main St.,3:45,1972-05-12,Rock
-Sweet Virginia,The Rolling Stones,Exile on Main St.,4:25,1972-05-12,Rock
-Torn and Frayed,The Rolling Stones,Exile on Main St.,4:17,1972-05-12,Rock
-Sweet Black Angel,The Rolling Stones,Exile on Main St.,2:54,1972-05-12,Rock
-Loving Cup,The Rolling Stones,Exile on Main St.,4:25,1972-05-12,Rock
-Happy,The Rolling Stones,Exile on Main St.,3:04,1972-05-12,Rock
-Turd on the Run,The Rolling Stones,Exile on Main St.,2:36,1972-05-12,Rock
-Ventilator Blues,The Rolling Stones,Exile on Main St.,3:24,1972-05-12,Rock
-I Just Want to See His Face,The Rolling Stones,Exile on Main St.,2:52,1972-05-12,Rock
-Let It Loose,The Rolling Stones,Exile on Main St.,5:17,1972-05-12,Rock
-All Down the Line,The Rolling Stones,Exile on Main St.,3:49,1972-05-12,Rock
-Stop Breaking Down,The Rolling Stones,Exile on Main St.,4:34,1972-05-12,Rock
-Shine a Light,The Rolling Stones,Exile on Main St.,4:14,1972-05-12,Rock
-Soul Survivor,The Rolling Stones,Exile on Main St.,3:49,1972-05-12,Rock
+'Rocks Off','The Rolling Stones','Exile on Main St.',4:31,'1972-05-12','Rock'
+'Rip This Joint','The Rolling Stones','Exile on Main St.',2:23,'1972-05-12','Rock'
+'Shake Your Hips','The Rolling Stones','Exile on Main St.',2:58,'1972-05-12','Rock'
+'Casino Boogie','The Rolling Stones','Exile on Main St.',3:33,'1972-05-12','Rock'
+'Tumbling Dice','The Rolling Stones','Exile on Main St.',3:45,'1972-05-12','Rock'
+'Sweet Virginia','The Rolling Stones','Exile on Main St.',4:25,'1972-05-12','Rock'
+'Torn and Frayed','The Rolling Stones','Exile on Main St.',4:17,'1972-05-12','Rock'
+'Sweet Black Angel','The Rolling Stones','Exile on Main St.',2:54,'1972-05-12','Rock'
+'Loving Cup','The Rolling Stones','Exile on Main St.',4:25,'1972-05-12','Rock'
+'Happy','The Rolling Stones','Exile on Main St.',3:04,'1972-05-12','Rock'
+'Turd on the Run','The Rolling Stones','Exile on Main St.',2:36,'1972-05-12','Rock'
+'Ventilator Blues','The Rolling Stones','Exile on Main St.',3:24,'1972-05-12','Rock'
+'I Just Want to See His Face','The Rolling Stones','Exile on Main St.',2:52,'1972-05-12','Rock'
+'Let It Loose','The Rolling Stones','Exile on Main St.',5:17,'1972-05-12','Rock'
+'All Down the Line','The Rolling Stones','Exile on Main St.',3:49,'1972-05-12','Rock'
+'Stop Breaking Down','The Rolling Stones','Exile on Main St.',4:34,'1972-05-12','Rock'
+'Shine a Light','The Rolling Stones','Exile on Main St.',4:14,'1972-05-12','Rock'
+'Soul Survivor','The Rolling Stones','Exile on Main St.',3:49,'1972-05-12','Rock'
 
-Smells Like Teen Spirit,Nirvana,Nevermind,5:01,1991-09-24,Grunge
-In Bloom,Nirvana,Nevermind,4:15,1991-09-24,Grunge
-Come as You Are,Nirvana,Nevermind,3:38,1991-09-24,Grunge
-Breed,Nirvana,Nevermind,3:03,1991-09-24,Grunge
-Lithium,Nirvana,Nevermind,4:17,1991-09-24,Grunge
-Polly,Nirvana,Nevermind,2:57,1991-09-24,Grunge
-Territorial Pissings,Nirvana,Nevermind,2:23,1991-09-24,Grunge
-Drain You,Nirvana,Nevermind,3:44,1991-09-24,Grunge
-Lounge Act,Nirvana,Nevermind,2:37,1991-09-24,Grunge
-Stay Away,Nirvana,Nevermind,3:32,1991-09-24,Grunge
-On a Plain,Nirvana,Nevermind,3:17,1991-09-24,Grunge
-Something in the Way,Nirvana,Nevermind,3:51,1991-09-24,Grunge
+'Smells Like Teen Spirit','Nirvana','Nevermind',5:01,'1991-09-24','Grunge'
+'In Bloom','Nirvana','Nevermind',4:15,'1991-09-24','Grunge'
+'Come as You Are','Nirvana','Nevermind',3:38,'1991-09-24','Grunge'
+'Breed','Nirvana','Nevermind',3:03,'1991-09-24','Grunge'
+'Lithium','Nirvana','Nevermind',4:17,'1991-09-24','Grunge'
+'Polly','Nirvana','Nevermind',2:57,'1991-09-24','Grunge'
+'Territorial Pissings','Nirvana','Nevermind',2:23,'1991-09-24','Grunge'
+'Drain You','Nirvana','Nevermind',3:44,'1991-09-24','Grunge'
+'Lounge Act','Nirvana','Nevermind',2:37,'1991-09-24','Grunge'
+'Stay Away','Nirvana','Nevermind',3:32,'1991-09-24','Grunge'
+'On a Plain','Nirvana','Nevermind',3:17,'1991-09-24','Grunge'
+'Something in the Way','Nirvana','Nevermind',3:51,'1991-09-24','Grunge'
