@@ -46,6 +46,10 @@ public class albumWindowClass extends Application {
         this.albumName = albumName;
     }
 
+    public String getAlbumName() {
+        return this.albumName;
+    }
+
     public static void main(String[] args) {
         launch(args);
     }
