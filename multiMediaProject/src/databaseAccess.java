@@ -105,6 +105,38 @@ public class databaseAccess {
         return songs;
     }
 
+    public static List<List<String>> getSongListWithPrefixAndLimit(String prefix, int limit) {
+        List<List<String>> songs = new ArrayList<>();
+        String selectSQL = "SELECT AR.name as artistName, S.name as songName, S.length, S.date\n" +
+                "FROM Albums A\n" +
+                "JOIN AlbumSongs ASs on A.albumID = ASs.albumID\n" +
+                "JOIN Songs S on S.songID = ASs.albumSongID\n" +
+                "JOIN Artists AR on AR.artistID = ASs.albumArtistID\n" +
+                "WHERE S.name LIKE ?\n" +  // Use LIKE for pattern matching
+                "LIMIT ?;";  // Add LIMIT clause
+    
+        try (PreparedStatement preparedStatement = connection.prepareStatement(selectSQL)) {
+            preparedStatement.setString(1, "%" + prefix + "%");  // Set the parameter for the LIKE clause
+            preparedStatement.setInt(2, limit);  // Set the limit parameter
+    
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                // Use the correct column names to retrieve values
+                List<String> song = new ArrayList<>();
+                song.add("artist: " + resultSet.getString("artistName"));
+                song.add("song: " + resultSet.getString("songName"));
+                song.add("length: " + formatTime(resultSet.getInt("length")));
+                song.add("date: " + resultSet.getString("date"));
+    
+                songs.add(song);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace(); // Handle exceptions appropriately
+        }
+    
+        return songs;
+    }
+
     public static String formatTime(int seconds) {
         int hours = seconds / 3600;
         int minutes = (seconds % 3600) / 60;
