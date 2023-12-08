@@ -77,13 +77,7 @@ public class songWindow {
     private ListView<String> list8;
 
     @FXML
-    private TextField playlist;
-
-    @FXML
     private Button search;
-
-    @FXML
-    private TextField songText;
 
     @FXML
     private TextField searchSongField;
@@ -91,12 +85,19 @@ public class songWindow {
     @FXML
     private ComboBox<String> sortSongs;
 
+    @FXML
+    private ComboBox<String> populatedSongs;
+
+    @FXML
+    private ComboBox<String> playlists;
+
     public void initialize() {
         // Add your ImageView and ListView instances to the observable lists during
         // initialization
         imageViews.addAll(img1, img2, img3, img4, img5, img6, img7, img8);
         listViews.addAll(list1, list2, list3, list4, list5, list6, list7, list8);
-
+        List<String> createdPlaylists = databaseAccess.getPlaylists();
+        playlists.getItems().addAll(createdPlaylists);
         // Hide all ImageViews and ListViews initially
         hideAll();
         sortSongs.getItems().addAll(
@@ -136,6 +137,7 @@ public class songWindow {
         if (!songPrefix.isEmpty()) {
             int limit = getLimitValue();
             String searchCriteria = sortSongs.getSelectionModel().getSelectedItem();
+            System.out.println("SEARCH CRITERIA IS " + searchCriteria);
             List<List<String>> songs;
             if (limit != -1) {
 
@@ -151,6 +153,7 @@ public class songWindow {
                     songs = databaseAccess.getSongListWithPrefixAndLimit(songPrefix, 8);
                 }
             }
+
             populateListViews(songs);
 
         } else {
@@ -158,8 +161,20 @@ public class songWindow {
         }
     }
 
+    public void handleAddSong(){
+        String selectedPlaylist = playlists.getSelectionModel().getSelectedItem();
+        String selectedSong = populatedSongs.getSelectionModel().getSelectedItem();
+        // Check if both playlist and song are selected
+        if (selectedPlaylist != null && selectedSong != null) {
+            databaseAccess.addSongToPlaylist(selectedPlaylist, selectedSong);
+            System.out.println("Song added to playlist successfully!");
+        
+        } else {
+            System.out.println("Please select both a playlist and a song to add.");
+        }
+    }
+
     public void insertData(int index, String data) {
-        System.out.println("data is" + index + data);
         Platform.runLater(() -> {
             // Insert data into the corresponding ListView based on the index
             listViews.get(index).getItems().add(data);
@@ -194,9 +209,12 @@ public class songWindow {
 
     public void populateListViews(List<List<String>> songs) {
         clearAll();
+        populatedSongs.getItems().clear();
+        for (int i = 0; i < songs.size(); i++){
+            populatedSongs.getItems().add(songs.get(i).get(1));
+        }
         for (int i = 0; i < songs.size(); i++) {
             List<String> curSongData = songs.get(i);
-            System.out.println("got here");
             for (String data : curSongData) {
                 final int index = i; // need to make it final to use inside runLater
                 Platform.runLater(() -> {

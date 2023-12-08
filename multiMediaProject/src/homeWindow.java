@@ -172,19 +172,17 @@ public class homeWindow {
         showData(index, true);
     }
 
-    public void createPlaylist() {
-        // Retrieve the playlist name from the text field
-        String playlistName = createPlaylistField.getText().trim();
 
-        // Check if the playlist name is not empty
-        if (!playlistName.isEmpty()) {
-            // Call the method to create the playlist (replace the comments with your logic)
-            // databaseAccess.createPlaylist(playlistName);
-            System.out.println("Playlist created: " + playlistName);
-        } else {
-            // Playlist name is empty, print a message to the console
-            System.out.println("Please enter a playlist name.");
-        }
+    public void handlePlaylist() {
+        Stage currentWindow = (Stage) list1.getScene().getWindow();
+            currentWindow.close();
+            playlistWindowClass playlistWindow = new playlistWindowClass();
+            try {
+                Stage stage = new Stage();
+                playlistWindow.start(stage);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
     }
 
     public void handleSearchAlbum() {

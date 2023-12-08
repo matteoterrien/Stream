@@ -24,13 +24,11 @@ public class songWindowClass extends Application {
 
         // Get the controller instance
         songWindow controller = loader.getController();
-        System.out.println("populating lists");
-        System.out.println("songs are " + songSearch);
-        System.out.println(databaseAccess.getSongListWithPrefixAndLimit(songSearch, 8));
-        controller.populateListViews(databaseAccess.getSongListWithPrefixAndLimit(songSearch, 8)); // 8 is default data
-                                                                                                   // returned
+        
+        controller.populateListViews(databaseAccess.getSongListWithPrefixAndLimit(songSearch, 8)); //8 is default data returned
 
-        // controller.clearAll();
+
+        //controller.clearAll();
         Scene scene = new Scene(root, 800, 600);
         primaryStage.setScene(scene);
         primaryStage.setTitle("Song Search");
