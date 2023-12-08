@@ -141,15 +141,15 @@ public class songWindow {
             List<List<String>> songs;
             if (limit != -1) {
 
-                if (searchCriteria != null){
+                if (searchCriteria != null) {
                     songs = databaseAccess.getSongListWithPrefixAndLimit(songPrefix, limit, searchCriteria);
-                }else{
+                } else {
                     songs = databaseAccess.getSongListWithPrefixAndLimit(songPrefix, limit);
                 }
             } else {
-                if (searchCriteria != null){
+                if (searchCriteria != null) {
                     songs = databaseAccess.getSongListWithPrefixAndLimit(songPrefix, 8, searchCriteria);
-                }else{
+                } else {
                     songs = databaseAccess.getSongListWithPrefixAndLimit(songPrefix, 8);
                 }
             }
