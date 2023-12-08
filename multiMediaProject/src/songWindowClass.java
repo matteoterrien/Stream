@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -30,9 +27,10 @@ public class songWindowClass extends Application {
         System.out.println("populating lists");
         System.out.println("songs are " + songSearch);
         System.out.println(databaseAccess.getSongListWithPrefixAndLimit(songSearch, 8));
-        controller.populateListViews(databaseAccess.getSongListWithPrefixAndLimit(songSearch, 8)); //8 is default data returned
+        controller.populateListViews(databaseAccess.getSongListWithPrefixAndLimit(songSearch, 8)); // 8 is default data
+                                                                                                   // returned
 
-        //controller.clearAll();
+        // controller.clearAll();
         Scene scene = new Scene(root, 800, 600);
         primaryStage.setScene(scene);
         primaryStage.setTitle("Song Search");

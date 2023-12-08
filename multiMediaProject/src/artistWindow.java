@@ -4,7 +4,6 @@ import java.util.List;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -12,7 +11,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Menu;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
@@ -90,7 +88,6 @@ public class artistWindow {
     @FXML
     private ListView<String> list9;
 
-    
     @FXML
     private TextField playlist;
 
@@ -106,13 +103,13 @@ public class artistWindow {
 
     }
     // private void hideAll() {
-    //     for (ListView<?> listView : listViews) {
-    //         if (listView != null) {
-    //             listView.setVisible(false);
-    //         }
-    //     }
+    // for (ListView<?> listView : listViews) {
+    // if (listView != null) {
+    // listView.setVisible(false);
     // }
-    
+    // }
+    // }
+
     public void handleBackButton() {
         // Handle back button click
         Stage stage = (Stage) add.getScene().getWindow(); // Get the current stage
@@ -125,28 +122,27 @@ public class artistWindow {
         }
     }
     // public void handleAtoZButton() {
-    //     List<List<String>> songs = new ArrayList<>();
-    //     int limit = getLimitValue();
-    //     if (limit != -1) {
-    //         songs = databaseAccess.sortAlbumsBy(artistName, "songName", "ASC", limit);
-    //     } else {
-    //         songs = databaseAccess.sortAlbumsBy(artistName, "songName", "ASC", 12);
-    //     }
-    //     System.out.println(songs);
-    //     populateListViews(songs);
+    // List<List<String>> songs = new ArrayList<>();
+    // int limit = getLimitValue();
+    // if (limit != -1) {
+    // songs = databaseAccess.sortAlbumsBy(artistName, "songName", "ASC", limit);
+    // } else {
+    // songs = databaseAccess.sortAlbumsBy(artistName, "songName", "ASC", 12);
+    // }
+    // System.out.println(songs);
+    // populateListViews(songs);
     // }
 
-
     // public void handleZtoAButton() {
-    //     List<List<String>> songs = new ArrayList<>();
-    //     int limit = getLimitValue();
-    //     if (limit != -1) {
-    //         songs = databaseAccess.sortAlbumsBy(artistName, "songName", "DESC", limit);
-    //     } else {
-    //         songs = databaseAccess.sortAlbumsBy(artistName, "songName", "DESC", 12);
-    //     }
-    //     System.out.println(songs);
-    //     populateListViews(songs);
+    // List<List<String>> songs = new ArrayList<>();
+    // int limit = getLimitValue();
+    // if (limit != -1) {
+    // songs = databaseAccess.sortAlbumsBy(artistName, "songName", "DESC", limit);
+    // } else {
+    // songs = databaseAccess.sortAlbumsBy(artistName, "songName", "DESC", 12);
+    // }
+    // System.out.println(songs);
+    // populateListViews(songs);
     // }
 
     public void handleAtoZButton() {
@@ -160,7 +156,7 @@ public class artistWindow {
         System.out.println(songs);
         populateListViews(songs);
     }
-    
+
     public void handleZtoAButton() {
         List<List<String>> songs = new ArrayList<>();
         int limit = getLimitValue();
@@ -173,29 +169,12 @@ public class artistWindow {
         populateListViews(songs);
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     public void showData(int index, boolean show) {
         if (index >= 0) {
             listViews.get(index).setVisible(show);
         }
     }
+
     public void insertData(int index, String data) {
         System.out.println("data is" + index + data);
         Platform.runLater(() -> {
@@ -206,9 +185,11 @@ public class artistWindow {
             showData(index, true);
         });
     }
+
     public void setArtistName(String artistName) {
         this.artistName = artistName;
     }
+
     public void clearAll() {
         // Clear data from all ListViews
         for (ListView<String> listView : listViews) {
@@ -230,7 +211,6 @@ public class artistWindow {
         }
     }
 
-
     public Integer getLimitValue() {
         // Get the value from the TextField
         String limitValue = limit.getText();
@@ -248,7 +228,4 @@ public class artistWindow {
         return limitInt;
     }
 
-
-
-    
 }// END OF IT ALL

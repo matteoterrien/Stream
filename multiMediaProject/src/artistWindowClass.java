@@ -1,7 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
-
-import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -19,10 +15,9 @@ public class artistWindowClass {
         this.artistName = artistName;
     }
 
-    public artistWindowClass(String artistName, Stage stage){
+    public artistWindowClass(String artistName, Stage stage) {
         this.stage = stage;
     }
-
 
     public void start(Stage primaryStage) throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("artistsView.fxml"));
@@ -34,7 +29,7 @@ public class artistWindowClass {
         controller.setArtistName(artistName);
         // controller.setArtistData(artistName, controller);
 
-        //controller.clearAll();
+        // controller.clearAll();
         Scene scene = new Scene(root, 800, 600);
         primaryStage.setScene(scene);
         primaryStage.setTitle(artistName);
@@ -49,10 +44,4 @@ public class artistWindowClass {
         return this.artistName;
     }
 
-
-    
-
-   
-
-    
 }

@@ -2,9 +2,6 @@ import java.io.InputStream;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -53,10 +50,8 @@ public class homeWindow {
     @FXML
     private ImageView img8;
 
-
     @FXML
     private ListView<String> list1;
-
 
     @FXML
     private ListView<String> list2;
@@ -97,19 +92,16 @@ public class homeWindow {
     @FXML
     private TextField searchSongField;
 
-
-    public void handleSearchArtist(){
+    public void handleSearchArtist() {
         String artistToSearch = searchArtistField.getText();
         openArtistWindow(artistToSearch, (Stage) list1.getScene().getWindow());
     }
-    
-
 
     public void openArtistWindow(String artistName, Stage currentWindow) {
         // Open the albumWindow with the corresponding album name
         String selectSQL = "SELECT A.artistID\n" + //
                 "FROM Artists A\n" + //
-    
+
                 "WHERE A.name = (?);";
         try (PreparedStatement preparedStatement = homeWindowClass.connect.prepareStatement(selectSQL)) {
             // Set the value for the parameter at index 1
@@ -134,16 +126,11 @@ public class homeWindow {
                 System.out.println("Artist not found: " + artistName);
             }
 
-
-
-
-        }
-        catch (SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace(); // Handle exceptions appropriately
         }
 
     }
-
 
     public void initialize() {
         // Add your ImageView and ListView instances to the observable lists during
@@ -177,10 +164,10 @@ public class homeWindow {
             System.err.println("Image not found: " + imagePath);
             return;
         }
-    
+
         Image image = new Image(imageStream);
         imageViews.get(index).setImage(image);
-    
+
         // Set visibility to true for the corresponding ImageView
         showData(index, true);
     }
@@ -188,7 +175,7 @@ public class homeWindow {
     public void createPlaylist() {
         // Retrieve the playlist name from the text field
         String playlistName = createPlaylistField.getText().trim();
-    
+
         // Check if the playlist name is not empty
         if (!playlistName.isEmpty()) {
             // Call the method to create the playlist (replace the comments with your logic)
@@ -220,12 +207,12 @@ public class homeWindow {
             currentWindow.close();
             songWindowClass songWindow = new songWindowClass(songPrefix);
             try {
-                    Stage stage = new Stage();
-                    songWindow.start(stage);
-                    System.out.println(songWindow);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+                Stage stage = new Stage();
+                songWindow.start(stage);
+                System.out.println(songWindow);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         } else {
             System.out.println("insert search text");
         }
@@ -292,4 +279,3 @@ public class homeWindow {
         }
     }
 }
-
