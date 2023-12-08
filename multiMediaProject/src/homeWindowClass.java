@@ -34,7 +34,7 @@ public class homeWindowClass extends Application {
             // controller.clearAll();
             Scene scene = new Scene(root, 800, 600);
             primaryStage.setScene(scene);
-            primaryStage.setTitle("Your Application Title");
+            primaryStage.setTitle("Home");
             primaryStage.show();
         } catch (Exception e) {
             e.printStackTrace();

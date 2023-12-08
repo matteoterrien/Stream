@@ -9,7 +9,6 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import java.net.URL;
 
-
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -101,68 +100,72 @@ public class homeWindow {
     @FXML
     private TextField searchSongField;
 
-    
     @FXML
     private void handlePlayButton1() {
-    playMusic("C:\\Users\\Jonathan\\Downloads\\Stream-main (2)\\Stream-main\\multiMediaProject\\src\\Wish You Were Here.mp3");
+        playMusic("/Users/bretthillyard/Desktop/MultiMediaRepo/Stream/multiMediaProject/src/Wish You Were Here.mp3");
     }
 
     @FXML
     private void handlePlayButton2() {
-    playMusic("C:\\Users\\Jonathan\\Downloads\\Stream-main (2)\\Stream-main\\multiMediaProject\\src\\Wish You Were Here.mp3");
+        playMusic(
+                "C:\\Users\\Jonathan\\Downloads\\Stream-main (2)\\Stream-main\\multiMediaProject\\src\\Wish You Were Here.mp3");
     }
 
     @FXML
     private void handlePlayButton3() {
-    playMusic("C:\\Users\\Jonathan\\Downloads\\Stream-main (2)\\Stream-main\\multiMediaProject\\src\\Wish You Were Here.mp3");
+        playMusic(
+                "C:\\Users\\Jonathan\\Downloads\\Stream-main (2)\\Stream-main\\multiMediaProject\\src\\Wish You Were Here.mp3");
     }
 
     @FXML
     private void handlePlayButton4() {
-    playMusic("C:\\Users\\Jonathan\\Downloads\\Stream-main (2)\\Stream-main\\multiMediaProject\\src\\Wish You Were Here.mp3");
+        playMusic(
+                "C:\\Users\\Jonathan\\Downloads\\Stream-main (2)\\Stream-main\\multiMediaProject\\src\\Wish You Were Here.mp3");
     }
 
     @FXML
     private void handlePlayButton5() {
-    playMusic("C:\\Users\\Jonathan\\Downloads\\Stream-main (2)\\Stream-main\\multiMediaProject\\src\\Wish You Were Here.mp3");
+        playMusic(
+                "C:\\Users\\Jonathan\\Downloads\\Stream-main (2)\\Stream-main\\multiMediaProject\\src\\Wish You Were Here.mp3");
     }
 
     @FXML
     private void handlePlayButton6() {
-    playMusic("C:\\Users\\Jonathan\\Downloads\\Stream-main (2)\\Stream-main\\multiMediaProject\\src\\Wish You Were Here.mp3");
+        playMusic(
+                "C:\\Users\\Jonathan\\Downloads\\Stream-main (2)\\Stream-main\\multiMediaProject\\src\\Wish You Were Here.mp3");
     }
 
     @FXML
     private void handlePlayButton7() {
-    playMusic("C:\\Users\\Jonathan\\Downloads\\Stream-main (2)\\Stream-main\\multiMediaProject\\src\\Wish You Were Here.mp3");
+        playMusic(
+                "C:\\Users\\Jonathan\\Downloads\\Stream-main (2)\\Stream-main\\multiMediaProject\\src\\Wish You Were Here.mp3");
     }
 
     @FXML
     private void handlePlayButton8() {
-    playMusic("C:\\Users\\Jonathan\\Downloads\\Stream-main (2)\\Stream-main\\multiMediaProject\\src\\Wish You Were Here.mp3");
+        playMusic(
+                "C:\\Users\\Jonathan\\Downloads\\Stream-main (2)\\Stream-main\\multiMediaProject\\src\\Wish You Were Here.mp3");
     }
 
     private void playMusic(String path) {
         try {
-        String musicFilePath = path ;
-        
-        // Convert the file path to a URL format
-        File musicFile = new File(musicFilePath);
-        String musicFileURI = musicFile.toURI().toString();
+            String musicFilePath = path;
 
-        // Create the media and media player
-        Media sound = new Media(musicFileURI);
-        MediaPlayer mediaPlayer = new MediaPlayer(sound);
+            // Convert the file path to a URL format
+            File musicFile = new File(musicFilePath);
+            String musicFileURI = musicFile.toURI().toString();
 
-        // Play the media
-        mediaPlayer.play();
-    } catch (Exception e) {
-        e.printStackTrace();
-        // Handle exception (file not found, media unsupported, etc.)
+            // Create the media and media player
+            Media sound = new Media(musicFileURI);
+            MediaPlayer mediaPlayer = new MediaPlayer(sound);
+
+            // Play the media
+            mediaPlayer.play();
+        } catch (Exception e) {
+            e.printStackTrace();
+            // Handle exception (file not found, media unsupported, etc.)
+        }
     }
-}
-
-
 
     public void handleSearchArtist() {
         String artistToSearch = searchArtistField.getText();
@@ -244,17 +247,16 @@ public class homeWindow {
         showData(index, true);
     }
 
-
     public void handlePlaylist() {
         Stage currentWindow = (Stage) list1.getScene().getWindow();
-            currentWindow.close();
-            playlistWindowClass playlistWindow = new playlistWindowClass();
-            try {
-                Stage stage = new Stage();
-                playlistWindow.start(stage);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+        currentWindow.close();
+        playlistWindowClass playlistWindow = new playlistWindowClass();
+        try {
+            Stage stage = new Stage();
+            playlistWindow.start(stage);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void handleSearchAlbum() {
@@ -325,7 +327,7 @@ public class homeWindow {
 
     public void populateListViews(List<List<String>> songs, List<String> imagePaths) {
         clearAll();
-        for (int i = 0; i < imagePaths.size(); i++){
+        for (int i = 0; i < imagePaths.size(); i++) {
             insertImage(i, imagePaths.get(i));
         }
         for (int i = 0; i < songs.size(); i++) {
@@ -338,7 +340,6 @@ public class homeWindow {
             }
         }
     }
-
 
     public void clearAll() {
         // Clear data from all ListViews
