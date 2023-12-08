@@ -3,7 +3,10 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Random;
+import java.util.Set;
 
 public class ReadFile {
 
@@ -17,45 +20,69 @@ public class ReadFile {
     public void readFile() throws IOException, ParseException {
         String[] info;
         String line;
+        Set<Artists.Artist> uniqueArtists = new HashSet<>();
+        Set<Albums.Album> uniqueAlbums = new HashSet<>();
+
+        Albums.Album album = albums.createAlbum();
+        HashMap<String, Integer> ArtistID = new HashMap<String, Integer>();
+
         while ((line = reader.readLine()) != null) {
             if (line.length() == 0)
                 continue;
 
             info = line.split(",");
-            // for (int i = 0; i < info.length; i++)
-            //     System.out.println(info[i]);
 
             String[] strLength = info[3].split(":");
             int length = Integer.parseInt(strLength[0]) * Integer.parseInt(strLength[1]);
 
             Songs.Song song = songs.createSong();
+            song.setSongID(songs.getSongs().size() + 1);
             song.setName(info[0]);
-
             song.setLength(length);
-            song.setSongID(songs.getSongs().size());
             song.setDate(info[4]);
+            songs.addSongs(song);
 
             Artists.Artist artist = artists.createArtist();
+            artist.setArtistID(0);
             artist.setName(info[1]);
-            artist.setArtistID(artists.getArtists().size());
+            uniqueArtists.add(artist);
+            if (!ArtistID.containsKey(artist.getName()))
+                ArtistID.put(artist.getName(), uniqueArtists.size());
 
-            song.setArtistID(artist.getArtistID());
-
-            Albums.Album album = albums.createAlbum();
-            album.setName(info[2]);
-            album.setAlbumID(albums.getAlbums().size());
-            album.setReleaseDate(info[4]);
-            album.setGenre(info[5]);
-
-            songs.addSongs(song);
-            artists.addArtists(artist);
-            albums.addAlbum(album);
+            if (album.getName() == null || !album.getName().equals(info[2])) {
+                Albums.Album newAlbum = albums.createAlbum();
+                album = newAlbum;
+                album.setName(info[2]);
+                album.setArtistID(ArtistID.get(info[1]));
+                album.setReleaseDate(info[4]);
+                album.setGenre(info[5]);
+                album.addSong(song);
+                uniqueAlbums.add(album);
+            } else {
+                album.addSong(song);
+            }
         }
+
+        for (Artists.Artist value : uniqueArtists) {
+            value.setArtistID(ArtistID.get(value.getName()));
+            artists.addArtists(value);
+            // System.out.println(value.getName() + ", " + value.getArtistID());
+        }
+        System.out.println("\n");
+        for (Albums.Album value : uniqueAlbums) {
+            // System.out.println(value.getName() + ", " + value.getArtistID());
+            value.setAlbumID(albums.getAlbums().size() + 1);
+            albums.addAlbum(value);
+            // for (Songs.Song song : value.getSongs())
+            // System.out.println(song.getName());
+            // System.out.println("\n");
+        }
+
         Random random = new Random();
         for (int i = 0; i < 5; i++) {
             Playlists.Playlist playlist = playlists.createPlaylist();
-            playlist.setPlaylistID(playlists.getPlaylists().size());
-            playlist.setPlaylistTitle("Playlist: " + playlist.getPlaylistID());
+            playlist.setPlaylistID(playlists.getPlaylists().size() + 1);
+            playlist.setPlaylistTitle("Playlist" + playlist.getPlaylistID());
             ArrayList<Songs.Song> songList = new ArrayList<>();
             for (int j = 0; j < 15; j++) {
                 int songID = random.nextInt(songs.songs.size());

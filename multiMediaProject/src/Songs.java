@@ -10,53 +10,64 @@ public class Songs {
         private int length;
         private String date;
         private BigInteger audioFile;
-        private int artistID;
 
-        public void setSongID(int songID) { this.songID = songID; }
+        public void setSongID(int songID) {
+            this.songID = songID;
+        }
+
         public void setName(String name) {
             this.name = name;
         }
+
         public void setLength(int length) {
             this.length = length;
         }
+
         public void setDate(String date) {
             this.date = date;
         }
+
         public void setAudioFile(BigInteger audioFile) {
             this.audioFile = audioFile;
         }
-        public void setArtistID(int artistID) {
-            this.artistID = artistID;
+
+        public int getSongID() {
+            return songID;
         }
-        public int getSongID() { return songID; }
+
         public String getName() {
             return name;
         }
-        public float getLength() {
+
+        public int getLength() {
             return length;
         }
+
         public String getDate() {
             return date;
         }
+
         public BigInteger getAudioFile() {
             return audioFile;
         }
-        public int getArtistID() {
-            return artistID;
-        }
     }
-    public Song createSong() { 
-        return new Song(); 
+
+    public Song createSong() {
+        return new Song();
     }
+
     public void setSongs(HashMap<Integer, Song> songs) {
         this.songs = songs;
     }
+
     public void addSongs(Song S) {
         songs.put(S.songID, S);
     }
+
     public HashMap<Integer, Song> getSongs() {
         return songs;
     }
+
     public Song getSong(int id) {
         return songs.get(id);
     }
