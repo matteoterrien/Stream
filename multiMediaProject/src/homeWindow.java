@@ -1,3 +1,4 @@
+import java.io.InputStream;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -96,6 +97,54 @@ public class homeWindow {
     @FXML
     private TextField searchSongField;
 
+
+    public void handleSearchArtist(){
+        String artistToSearch = searchArtistField.getText();
+        openArtistWindow(artistToSearch, (Stage) list1.getScene().getWindow());
+    }
+    
+
+
+    public void openArtistWindow(String artistName, Stage currentWindow) {
+        // Open the albumWindow with the corresponding album name
+        String selectSQL = "SELECT A.artistID\n" + //
+                "FROM Artists A\n" + //
+    
+                "WHERE A.name = (?);";
+        try (PreparedStatement preparedStatement = homeWindowClass.connect.prepareStatement(selectSQL)) {
+            // Set the value for the parameter at index 1
+            preparedStatement.setString(1, artistName);
+
+            // Execute the update
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                // If there is a result, create and show the albumWindow
+                Platform.runLater(() -> currentWindow.close());
+                currentWindow.close();
+                artistWindowClass artistWindow = new artistWindowClass(artistName);
+                try {
+                    Stage stage = new Stage();
+                    artistWindow.start(stage);
+                    System.out.println(artistWindow);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            } else {
+                // If there is no result, print a message to the terminal
+                System.out.println("Artist not found: " + artistName);
+            }
+
+
+
+
+        }
+        catch (SQLException e) {
+            e.printStackTrace(); // Handle exceptions appropriately
+        }
+
+    }
+
+
     public void initialize() {
         // Add your ImageView and ListView instances to the observable lists during
         // initialization
@@ -123,12 +172,15 @@ public class homeWindow {
     }
 
     public void insertImage(int index, String imagePath) {
-        // Load the image
-        Image image = new Image(getClass().getResourceAsStream(imagePath));
-
-        // Set the image to the corresponding ImageView based on the index
+        InputStream imageStream = getClass().getResourceAsStream(imagePath);
+        if (imageStream == null) {
+            System.err.println("Image not found: " + imagePath);
+            return;
+        }
+    
+        Image image = new Image(imageStream);
         imageViews.get(index).setImage(image);
-
+    
         // Set visibility to true for the corresponding ImageView
         showData(index, true);
     }
