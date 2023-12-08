@@ -174,15 +174,16 @@ public class valuesToSQL {
         System.out.println("\n");
         for (int i = 1; i < playlists.getPlaylists().size() + 1; i++) {
             Playlists.Playlist playlist = playlists.getPlaylist(i);
-            for (int j = 1; j < playlist.getPlaylist().size() + 1; j++) {
+            for (int j = 0; j < playlist.getPlaylist().size(); j++) {
                 Songs.Song song = playlist.getPlaylist().get(j);
-                System.out.println(i + ", " + song.getName());
+                if (song == null)
+                    continue;
                 str += ("(" + playlist.getPlaylistID() + ", " + song.getSongID() + ")");
-                if (i < playlist.getPlaylist().size() - 1)
+                if (i < playlist.getPlaylist().size() - 1 && song != null)
                     str += ", ";
             }
-            if (i < playlists.getPlaylists().size() - 1)
-                str += ", ";
+            // if (i < playlists.getPlaylists().size() - 1)
+            // str += ", ";
         }
         System.out.println(str);
         Connection connection; // Initialize and manage your database connection

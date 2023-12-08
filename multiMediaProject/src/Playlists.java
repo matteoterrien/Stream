@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -9,6 +10,10 @@ public class Playlists {
         private int playlistID;
         private String playlistTitle;
         private List<Songs.Song> songs;
+
+        public Playlist() {
+            this.songs = new ArrayList<>();
+        }
 
         public void setPlaylistID(int playlistID) {
             this.playlistID = playlistID;
