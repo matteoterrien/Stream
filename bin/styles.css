@@ -1,0 +1,9 @@
+.list-view {
+    font-size: 6px;
+    -fx-font-size: 6px;
+}
+
+.list-cell {
+    font-size: 10px;
+    -fx-font-size: 10px;
+}

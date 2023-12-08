@@ -5,6 +5,7 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Random;
 import java.util.Set;
 
@@ -33,7 +34,7 @@ public class ReadFile {
             info = line.split(",");
 
             String[] strLength = info[3].split(":");
-            int length = Integer.parseInt(strLength[0]) * Integer.parseInt(strLength[1]);
+            int length = (Integer.parseInt(strLength[0]) * 60) + Integer.parseInt(strLength[1]);
 
             Songs.Song song = songs.createSong();
             song.setSongID(songs.getSongs().size() + 1);
@@ -83,13 +84,13 @@ public class ReadFile {
             Playlists.Playlist playlist = playlists.createPlaylist();
             playlist.setPlaylistID(playlists.getPlaylists().size() + 1);
             playlist.setPlaylistTitle("\'" + "Playlist" + playlist.getPlaylistID() + "\'");
-            ArrayList<Songs.Song> songList = new ArrayList<>();
             for (int j = 0; j < 15; j++) {
-                int songID = random.nextInt(songs.getSongs().size() + 1);
-                songList.add(songs.getSongs().get(songID));
-                System.out.println(songs.getSongs().get(songID).getName());
+                int songID = random.nextInt(songs.getSongs().size() + 1) + 1;
+                System.out.println(songID);
+                System.out.println(songID + "," + songs.getSongs().get(songID).getName());
+                playlist.addSong(songs.getSongs().get(songID));
+                // System.out.println(songs.getSongs().get(songID).getName());
             }
-            playlist.setSongs(songList);
             playlists.addPlaylist(playlist);
         }
     }

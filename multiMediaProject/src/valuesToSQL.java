@@ -171,13 +171,14 @@ public class valuesToSQL {
 
     public void sendPlaylistSongsValues() throws SQLException {
         String str = "INSERT INTO PlaylistSongs (playlistID, songID) VALUES ";
-        for (int i = 1; i < playlists.getPlaylists().size(); i++) {
+        System.out.println("\n");
+        for (int i = 1; i < playlists.getPlaylists().size() + 1; i++) {
             Playlists.Playlist playlist = playlists.getPlaylist(i);
-            for (int j = 1; j < playlist.getPlaylist().size(); j++) {
+            for (int j = 1; j < playlist.getPlaylist().size() + 1; j++) {
                 Songs.Song song = playlist.getPlaylist().get(j);
-                System.out.println(song.getName());
+                System.out.println(i + ", " + song.getName());
                 str += ("(" + playlist.getPlaylistID() + ", " + song.getSongID() + ")");
-                if (i < playlist.getPlaylist().size())
+                if (i < playlist.getPlaylist().size() - 1)
                     str += ", ";
             }
             if (i < playlists.getPlaylists().size() - 1)

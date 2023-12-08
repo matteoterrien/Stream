@@ -1,5 +1,5 @@
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class Playlists {
 
@@ -8,7 +8,7 @@ public class Playlists {
     public class Playlist {
         private int playlistID;
         private String playlistTitle;
-        private ArrayList<Songs.Song> songs;
+        private List<Songs.Song> songs;
 
         public void setPlaylistID(int playlistID) {
             this.playlistID = playlistID;
@@ -18,7 +18,7 @@ public class Playlists {
             this.playlistTitle = playlistTitle;
         }
 
-        public void setSongs(ArrayList<Songs.Song> songs) {
+        public void setSongs(List<Songs.Song> songs) {
             this.songs = songs;
         }
 
@@ -30,8 +30,12 @@ public class Playlists {
             return playlistTitle;
         }
 
-        public ArrayList<Songs.Song> getPlaylist() {
+        public List<Songs.Song> getPlaylist() {
             return songs;
+        }
+
+        public void addSong(Songs.Song s) {
+            this.songs.add(s);
         }
     }
 
