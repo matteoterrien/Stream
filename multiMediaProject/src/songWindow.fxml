@@ -44,25 +44,26 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="560.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="songWindow">
   <children>
-    <MenuBar VBox.vgrow="NEVER">
+    <MenuBar style="-fx-background-color: #000000;" VBox.vgrow="NEVER">
       <menus>
         <Menu mnemonicParsing="false" text="Home" />
             <Menu fx:id="handleBackButton" mnemonicParsing="false" onAction="#handleBackButton" text="Back">
               <items>
-                <MenuItem mnemonicParsing="false" text="Action 1" />
+                <MenuItem mnemonicParsing="false" text="Home" />
               </items>
             </Menu>
       </menus>
     </MenuBar>
-    <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="474.0" prefWidth="748.0" VBox.vgrow="ALWAYS">
+    <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="474.0" prefWidth="748.0" style="-fx-background-color: #000000; -fx-cursor: bold;" VBox.vgrow="ALWAYS">
       <children>
             <Separator layoutX="151.0" layoutY="4.0" orientation="VERTICAL" prefHeight="526.0" prefWidth="3.0" />
-            <ImageView fx:id="img1" fitHeight="120.0" fitWidth="120.0" layoutX="170.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="img1" fitHeight="120.0" fitWidth="120.0" layoutX="170.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true" />
             <ListView fx:id="list1" layoutX="170.0" layoutY="160.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="110.0" prefWidth="120.0" stylesheets="@styles.css" />
-            <ImageView fx:id="img2" fitHeight="120.0" fitWidth="120.0" layoutX="330.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="img2" fitHeight="120.0" fitWidth="120.0" layoutX="330.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true" />
             <ListView fx:id="list2" layoutX="330.0" layoutY="160.0" prefHeight="110.0" prefWidth="120.0" stylesheets="@styles.css" />
             <ImageView fx:id="img3" fitHeight="120.0" fitWidth="120.0" layoutX="490.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" />
             <ListView fx:id="list3" layoutX="490.0" layoutY="160.0" prefHeight="110.0" prefWidth="120.0" stylesheets="@styles.css" />
@@ -76,12 +77,15 @@
             <ListView fx:id="list7" layoutX="490.0" layoutY="415.0" prefHeight="110.0" prefWidth="120.0" stylesheets="@styles.css" />
             <ListView fx:id="list8" layoutX="650.0" layoutY="415.0" prefHeight="110.0" prefWidth="120.0" stylesheets="@styles.css" />
             <ImageView fx:id="img8" fitHeight="120.0" fitWidth="120.0" layoutX="650.0" layoutY="280.0" pickOnBounds="true" preserveRatio="true" />
-            <Label layoutX="172.0" layoutY="6.0" text="Song Results" />
-            <ComboBox fx:id="sortSongs" layoutX="14.0" layoutY="48.0" prefHeight="26.0" prefWidth="133.0" promptText="Select sorting method" />
-            <Label layoutX="21.0" layoutY="25.0" text="Select sorting method" />
-            <TextField fx:id="songText" layoutX="26.0" layoutY="400.0" prefHeight="26.0" prefWidth="100.0" promptText="Enter Song" />
-            <TextField fx:id="playlist" layoutX="26.0" layoutY="435.0" prefHeight="26.0" prefWidth="100.0" promptText="Enter Playlist" />
-            <Button fx:id="add" layoutX="26.0" layoutY="470.0" mnemonicParsing="false" onAction="#handleAddButton" prefHeight="26.0" prefWidth="100.0" text="Insert Song" />
+            <Label layoutX="170.0" layoutY="3.0" style="-fx-font-size: 15; -fx-font-weight: bold;" text="Song Results" textFill="WHITE" />
+            <ComboBox fx:id="sortSongs" layoutX="9.0" layoutY="31.0" prefHeight="26.0" prefWidth="133.0" promptText="Sort By" style="-fx-background-color: #4CAF50;" />
+            <Label layoutX="2.0" layoutY="4.0" style="-fx-font-size: 14; -fx-font-weight: bold;" text="Select Sorting Method" textFill="WHITE" />
+            <TextField fx:id="songText" layoutX="26.0" layoutY="400.0" prefHeight="26.0" prefWidth="100.0" promptText="Enter Song" style="-fx-background-color: #FFFFFF;" />
+            <TextField fx:id="playlist" layoutX="26.0" layoutY="435.0" prefHeight="26.0" prefWidth="100.0" promptText="Enter Playlist" style="-fx-background-color: #FFFFFF;" />
+            <Button fx:id="add" layoutX="26.0" layoutY="470.0" mnemonicParsing="false" onAction="#handleAddButton" prefHeight="26.0" prefWidth="100.0" style="-fx-background-color: #4CAF50;" text="Insert Song" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font></Button>
       </children>
     </AnchorPane>
   </children>
