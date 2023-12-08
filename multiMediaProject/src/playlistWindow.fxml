@@ -51,9 +51,9 @@
       <menus>
         <Menu mnemonicParsing="false" text="Home" />
             <Menu fx:id="handleBackButton" mnemonicParsing="false" onAction="#handleBackButton" text="Back">
-              <items>
-                <MenuItem mnemonicParsing="false" text="Action 1" />
-              </items>
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Back" />
+               </items>
             </Menu>
       </menus>
     </MenuBar>
@@ -84,6 +84,9 @@
             <Button fx:id="search" layoutX="26.0" layoutY="111.0" mnemonicParsing="false" onAction="#handleSearchPlaylist" prefHeight="26.0" prefWidth="100.0" style="-fx-background-color: #4CAF50;" text="Search Playlist" textFill="WHITE" />
             <TextField fx:id="limit" layoutX="44.0" layoutY="147.0" prefHeight="26.0" prefWidth="64.0" promptText="Set Limit" />
             <ComboBox fx:id="selectPlaylist" layoutX="9.0" layoutY="72.0" prefHeight="26.0" prefWidth="133.0" promptText="Select Playlist" style="-fx-background-color: #ffffffff;" />
+            <Button fx:id="deletePlaylist" layoutX="16.0" layoutY="181.0" mnemonicParsing="false" onAction="#handleDeletePlaylist" text="DELETE PLAYLIST" underline="true" />
+            <Button fx:id="deleteSong" layoutX="26.0" layoutY="327.0" mnemonicParsing="false" onAction="#handleDeleteSong" prefHeight="26.0" prefWidth="100.0" style="-fx-background-color: #4CAF50;" text="Delete Song" textFill="WHITE" />
+            <ComboBox fx:id="populatedSongs" layoutX="10.0" layoutY="293.0" prefHeight="26.0" prefWidth="133.0" promptText="Select Song" />
       </children>
     </AnchorPane>
   </children>

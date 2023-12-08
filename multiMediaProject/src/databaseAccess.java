@@ -479,6 +479,29 @@ public class databaseAccess {
     return imageURLs;
 }
 
+public static void deleteSongFromPlaylist(String playlistTitle, String songName) {
+    // Check if the playlist exists
+
+    String deleteSongSQL = "DELETE FROM PlaylistsSongs " +
+                           "WHERE playlistID = (SELECT playlistID FROM Playlists WHERE playlistTitle = ?) " +
+                           "AND songID = (SELECT songID FROM Songs WHERE name = ?)";
+
+    try (PreparedStatement preparedStatement = connection.prepareStatement(deleteSongSQL)) {
+        preparedStatement.setString(1, playlistTitle);
+        preparedStatement.setString(2, songName);
+
+        int rowsAffected = preparedStatement.executeUpdate();
+
+        if (rowsAffected > 0) {
+            System.out.println("Song deleted from playlist successfully: " + songName);
+        } else {
+            System.out.println("Song not found in playlist: " + songName);
+        }
+    } catch (SQLException e) {
+        e.printStackTrace(); // Handle exceptions appropriately
+    }
+}
+
     public static String formatTime(int seconds) {
         int hours = seconds / 3600;
         int minutes = (seconds % 3600) / 60;
@@ -487,5 +510,21 @@ public class databaseAccess {
         return String.format("%02d:%02d:%02d", hours, minutes, remainingSeconds);
     }
 
+    public static void deletePlaylist(String playlistName) {
+        String deletePlaylistSQL = "DELETE FROM Playlists WHERE playlistTitle = ?";
     
+        try (PreparedStatement preparedStatement = connection.prepareStatement(deletePlaylistSQL)) {
+            preparedStatement.setString(1, playlistName);
+    
+            int rowsAffected = preparedStatement.executeUpdate();
+            
+            if (rowsAffected > 0) {
+                System.out.println("Playlist deleted successfully: " + playlistName);
+            } else {
+                System.out.println("Playlist not found: " + playlistName);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace(); // Handle exceptions appropriately
+        }
+    }
 }

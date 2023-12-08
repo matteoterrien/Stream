@@ -90,6 +90,12 @@ public class playlistWindow {
     @FXML
     private Button search;
 
+    @FXML
+    private Button deletePlaylist;
+
+    @FXML 
+    private ComboBox<String> populatedSongs;
+
 
 
     @FXML
@@ -219,6 +225,10 @@ public class playlistWindow {
                 });
             }
         }
+        populatedSongs.getItems().clear();
+        for (int i = 0; i < songList.size(); i++){
+            populatedSongs.getItems().add(songList.get(i));
+        }
         System.out.println("NOw going to insert image?");
         List<String> imageURLs = databaseAccess.getImageURLsForSongs(songList, 8);
         for (int i = 0; i < imageURLs.size(); i++){
@@ -265,6 +275,28 @@ public class playlistWindow {
         }
     }
 
+    public void handleDeletePlaylist(){
+        String selectedPlaylist = selectPlaylist.getSelectionModel().getSelectedItem();
+        if (selectPlaylist != null){
+            databaseAccess.deletePlaylist(selectedPlaylist);
+            populatePlaylists();
+        }else{
+            System.out.println("select playlist to delete");
+
+        }
+        clearAll();
+    }
+
+    public void handleDeleteSong(){
+        String songToDelete = populatedSongs.getSelectionModel().getSelectedItem();
+        String playlistToDeleteFrom = selectPlaylist.getSelectionModel().getSelectedItem();
+
+        if (songToDelete != null && playlistToDeleteFrom != null){
+            databaseAccess.deleteSongFromPlaylist(playlistToDeleteFrom, songToDelete);
+        } else{
+            System.out.println("select song to delete and playlist to delete from");
+        }
+    }
 
     public void clearAll() {
         // Clear data from all ListViews
