@@ -90,7 +90,7 @@ public class valuesToSQL {
     }
 
     public void sendAlbumValues() throws SQLException {
-        String str = "INSERT INTO Albums (albumID, artistID, releaseDate, name, genre) VALUES ";
+        String str = "INSERT INTO Albums (albumID, artistID, releaseDate, albumName, genre) VALUES ";
         for (int i = 1; i < albums.getAlbums().size() + 1; i++) {
             Albums.Album album = albums.getAlbum(i);
             str += ("(" + album.getAlbumID() + ", "
@@ -109,7 +109,6 @@ public class valuesToSQL {
 
             Statement statement = connection.createStatement();
             statement.executeUpdate(str);
-            connection.commit();
             connection.close();
         } catch (Exception e) {
             // might need to catch other exceptions found in slides code
@@ -122,11 +121,13 @@ public class valuesToSQL {
         for (int i = 1; i < albums.getAlbums().size() + 1; i++) {
             Albums.Album album = albums.getAlbum(i);
             List<Songs.Song> songs = album.getSongs();
-            for (int j = 0; j < songs.size(); i++) {
-                str += ("(" + album.getAlbumID() + ", " + songs.get(i).getSongID() + ", " + album.getArtistID() + ")");
-                if (i < albums.getAlbums().size())
+            for (int j = 0; j < songs.size(); j++) {
+                str += ("(" + album.getAlbumID() + ", " + songs.get(j).getSongID() + ", " + album.getArtistID() + ")");
+                if (j < songs.size() - 1)
                     str += ", ";
             }
+            if (i < albums.getAlbums().size())
+                str += ", ";
         }
         Connection connection; // Initialize and manage your database connection
         try {
@@ -144,14 +145,15 @@ public class valuesToSQL {
     }
 
     public void sendPaylistValues() throws SQLException {
-        String str = "INSERT INTO Playlists (PlaylistID, PlaylistTitle) VALUES ";
+        String str = "INSERT INTO Playlists (playlistID, playlistTitle) VALUES ";
         for (int i = 1; i < playlists.getPlaylists().size() + 1; i++) {
             Playlists.Playlist playlist = playlists.getPlaylist(i);
-            str += ("(" + playlist.getPlaylistID() + ", " + playlist.getPlaylistTitle() + ")");
+            str += "(" + playlist.getPlaylistID() + ", " + playlist.getPlaylistTitle() + ")";
             if (i < playlists.getPlaylists().size())
                 str += ", ";
 
         }
+        System.out.println(str);
         Connection connection; // Initialize and manage your database connection
         try {
             // Class.forName("com.mysql.jdbc.Driver");
@@ -171,13 +173,17 @@ public class valuesToSQL {
         String str = "INSERT INTO PlaylistSongs (playlistID, songID) VALUES ";
         for (int i = 1; i < playlists.getPlaylists().size(); i++) {
             Playlists.Playlist playlist = playlists.getPlaylist(i);
-            for (int j = 0; j < playlist.getPlaylist().size(); j++) {
+            for (int j = 1; j < playlist.getPlaylist().size(); j++) {
                 Songs.Song song = playlist.getPlaylist().get(j);
+                System.out.println(song.getName());
                 str += ("(" + playlist.getPlaylistID() + ", " + song.getSongID() + ")");
-                if (i < playlists.getPlaylists().size())
+                if (i < playlist.getPlaylist().size())
                     str += ", ";
             }
+            if (i < playlists.getPlaylists().size() - 1)
+                str += ", ";
         }
+        System.out.println(str);
         Connection connection; // Initialize and manage your database connection
         try {
             // Class.forName("com.mysql.jdbc.Driver");

@@ -5,10 +5,10 @@ public class Main {
         valuesToSQL values = new valuesToSQL();
         // values.sendSongValues();
         // values.sendArtistValues();
-        //
-        values.sendAlbumValues();
-        values.sendAlbumSongsValues();
-        values.sendPaylistValues();
+        // values.sendSongToArtist();
+        // values.sendAlbumValues();
+        // values.sendAlbumSongsValues();
+        // values.sendPaylistValues();
         values.sendPlaylistSongsValues();
     }
 }

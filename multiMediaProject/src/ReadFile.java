@@ -82,11 +82,12 @@ public class ReadFile {
         for (int i = 0; i < 5; i++) {
             Playlists.Playlist playlist = playlists.createPlaylist();
             playlist.setPlaylistID(playlists.getPlaylists().size() + 1);
-            playlist.setPlaylistTitle("Playlist" + playlist.getPlaylistID());
+            playlist.setPlaylistTitle("\'" + "Playlist" + playlist.getPlaylistID() + "\'");
             ArrayList<Songs.Song> songList = new ArrayList<>();
             for (int j = 0; j < 15; j++) {
-                int songID = random.nextInt(songs.songs.size());
-                songList.add(songs.songs.get(songID));
+                int songID = random.nextInt(songs.getSongs().size() + 1);
+                songList.add(songs.getSongs().get(songID));
+                System.out.println(songs.getSongs().get(songID).getName());
             }
             playlist.setSongs(songList);
             playlists.addPlaylist(playlist);
