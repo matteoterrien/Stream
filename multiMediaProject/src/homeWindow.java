@@ -21,6 +21,13 @@ public class homeWindow {
     private ObservableList<ImageView> imageViews = FXCollections.observableArrayList();
     @FXML
     private ObservableList<ListView<String>> listViews = FXCollections.observableArrayList();
+
+    @FXML
+    private Button createPlaylist;
+
+    @FXML
+    private TextField createPlaylistField;
+
     @FXML
     private ImageView img1;
 
@@ -124,6 +131,21 @@ public class homeWindow {
 
         // Set visibility to true for the corresponding ImageView
         showData(index, true);
+    }
+
+    public void createPlaylist() {
+        // Retrieve the playlist name from the text field
+        String playlistName = createPlaylistField.getText().trim();
+    
+        // Check if the playlist name is not empty
+        if (!playlistName.isEmpty()) {
+            // Call the method to create the playlist (replace the comments with your logic)
+            // databaseAccess.createPlaylist(playlistName);
+            System.out.println("Playlist created: " + playlistName);
+        } else {
+            // Playlist name is empty, print a message to the console
+            System.out.println("Please enter a playlist name.");
+        }
     }
 
     public void handleSearchAlbum() {

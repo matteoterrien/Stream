@@ -52,6 +52,9 @@ public class songWindow {
     private ImageView img8;
 
     @FXML
+    private TextField limit;
+
+    @FXML
     private ListView<String> list1;
 
     @FXML
@@ -79,15 +82,16 @@ public class songWindow {
     private TextField playlist;
 
     @FXML
+    private Button search;
+
+    @FXML
     private TextField songText;
 
     @FXML
-    private ComboBox<?> sortSongs;
+    private TextField searchSongField;
 
     @FXML
-    void handleAddButton(ActionEvent event) {
-
-    }
+    private ComboBox<String> sortSongs;
 
     public void initialize() {
         // Add your ImageView and ListView instances to the observable lists during
@@ -97,6 +101,13 @@ public class songWindow {
 
         // Hide all ImageViews and ListViews initially
         hideAll();
+        sortSongs.getItems().addAll(
+                "Duration Ascending",
+                "Duration Descending",
+                "Newest Songs",
+                "Oldest Songs",
+                "Alphabetically Ascending",
+                "Alphabetically Descending");
     }
 
     private void hideAll() {
@@ -122,6 +133,33 @@ public class songWindow {
         }
     }
 
+    public void handleSearchSong() {
+        String songPrefix = searchSongField.getText().trim();
+        if (!songPrefix.isEmpty()) {
+            int limit = getLimitValue();
+            String searchCriteria = sortSongs.getSelectionModel().getSelectedItem();
+            List<List<String>> songs;
+            if (limit != -1) {
+
+                if (searchCriteria != null) {
+                    songs = databaseAccess.getSongListWithPrefixAndLimit(songPrefix, limit, searchCriteria);
+                } else {
+                    songs = databaseAccess.getSongListWithPrefixAndLimit(songPrefix, limit);
+                }
+            } else {
+                if (searchCriteria != null) {
+                    songs = databaseAccess.getSongListWithPrefixAndLimit(songPrefix, 8, searchCriteria);
+                } else {
+                    songs = databaseAccess.getSongListWithPrefixAndLimit(songPrefix, 8);
+                }
+            }
+            populateListViews(songs);
+
+        } else {
+            System.out.println("insert search text");
+        }
+    }
+
     public void insertData(int index, String data) {
         System.out.println("data is" + index + data);
         Platform.runLater(() -> {
@@ -137,6 +175,23 @@ public class songWindow {
         if (index >= 0) {
             listViews.get(index).setVisible(show);
         }
+    }
+
+    public Integer getLimitValue() {
+        // Get the value from the TextField
+        String limitValue = limit.getText();
+
+        // Convert the value to an integer if needed
+        int limitInt = -1;
+        try {
+            limitInt = Integer.parseInt(limitValue);
+
+        } catch (NumberFormatException e) {
+            // Handle the case where the entered text is not a valid integer
+            System.out.println("Invalid limit value: " + limitValue);
+
+        }
+        return limitInt;
     }
 
     public void populateListViews(List<List<String>> songs) {

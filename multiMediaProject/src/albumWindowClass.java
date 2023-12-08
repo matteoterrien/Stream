@@ -17,7 +17,7 @@ public class albumWindowClass extends Application {
         this.albumName = albumName;
     }
 
-    public albumWindowClass(String albumName, Stage stage){
+    public albumWindowClass(String albumName, Stage stage) {
         this.stage = stage;
     }
 
@@ -32,7 +32,7 @@ public class albumWindowClass extends Application {
         controller.setAlbumName(albumName);
         controller.setAlbumData(albumName, controller);
 
-        //controller.clearAll();
+        // controller.clearAll();
         Scene scene = new Scene(root, 800, 600);
         primaryStage.setScene(scene);
         primaryStage.setTitle(albumName);
