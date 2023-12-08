@@ -1,7 +1,15 @@
+import java.io.File;
 import java.io.InputStream;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import java.net.URL;
+
+
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -11,6 +19,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
 public class homeWindow {
@@ -91,6 +100,69 @@ public class homeWindow {
 
     @FXML
     private TextField searchSongField;
+
+    
+    @FXML
+    private void handlePlayButton1() {
+    playMusic("C:\\Users\\Jonathan\\Downloads\\Stream-main (2)\\Stream-main\\multiMediaProject\\src\\Wish You Were Here.mp3");
+    }
+
+    @FXML
+    private void handlePlayButton2() {
+    playMusic("C:\\Users\\Jonathan\\Downloads\\Stream-main (2)\\Stream-main\\multiMediaProject\\src\\Wish You Were Here.mp3");
+    }
+
+    @FXML
+    private void handlePlayButton3() {
+    playMusic("C:\\Users\\Jonathan\\Downloads\\Stream-main (2)\\Stream-main\\multiMediaProject\\src\\Wish You Were Here.mp3");
+    }
+
+    @FXML
+    private void handlePlayButton4() {
+    playMusic("C:\\Users\\Jonathan\\Downloads\\Stream-main (2)\\Stream-main\\multiMediaProject\\src\\Wish You Were Here.mp3");
+    }
+
+    @FXML
+    private void handlePlayButton5() {
+    playMusic("C:\\Users\\Jonathan\\Downloads\\Stream-main (2)\\Stream-main\\multiMediaProject\\src\\Wish You Were Here.mp3");
+    }
+
+    @FXML
+    private void handlePlayButton6() {
+    playMusic("C:\\Users\\Jonathan\\Downloads\\Stream-main (2)\\Stream-main\\multiMediaProject\\src\\Wish You Were Here.mp3");
+    }
+
+    @FXML
+    private void handlePlayButton7() {
+    playMusic("C:\\Users\\Jonathan\\Downloads\\Stream-main (2)\\Stream-main\\multiMediaProject\\src\\Wish You Were Here.mp3");
+    }
+
+    @FXML
+    private void handlePlayButton8() {
+    playMusic("C:\\Users\\Jonathan\\Downloads\\Stream-main (2)\\Stream-main\\multiMediaProject\\src\\Wish You Were Here.mp3");
+    }
+
+    private void playMusic(String path) {
+        try {
+        String musicFilePath = path ;
+        
+        // Convert the file path to a URL format
+        File musicFile = new File(musicFilePath);
+        String musicFileURI = musicFile.toURI().toString();
+
+        // Create the media and media player
+        Media sound = new Media(musicFileURI);
+        MediaPlayer mediaPlayer = new MediaPlayer(sound);
+
+        // Play the media
+        mediaPlayer.play();
+    } catch (Exception e) {
+        e.printStackTrace();
+        // Handle exception (file not found, media unsupported, etc.)
+    }
+}
+
+
 
     public void handleSearchArtist() {
         String artistToSearch = searchArtistField.getText();
