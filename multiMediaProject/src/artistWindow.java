@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.List;
-
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
