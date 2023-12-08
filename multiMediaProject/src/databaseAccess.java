@@ -387,12 +387,16 @@ public class databaseAccess {
     
             // Get playlist ID
             playlistIDStatement.setString(1, playlistName);
+            System.out.println(playlistIDStatement);
             ResultSet playlistIDResultSet = playlistIDStatement.executeQuery();
+            playlistIDResultSet.next();
             int playlistID = playlistIDResultSet.getInt("playlistID");
     
             // Get song ID
             songIDStatement.setString(1, songName);
+            System.out.println(songIDStatement);
             ResultSet songIDResultSet = songIDStatement.executeQuery();
+            songIDResultSet.next();
             int songID = songIDResultSet.getInt("songID");
     
             // Insert into PlaylistsSongs
