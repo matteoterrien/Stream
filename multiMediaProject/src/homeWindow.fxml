@@ -58,7 +58,7 @@
                <font>
                   <Font size="15.0" />
                </font></Button>
-                <Button fx:id="searchArtist" layoutX="21.0" layoutY="207.0" mnemonicParsing="false" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" text="Search Artists">
+                <Button fx:id="searchArtist" layoutX="21.0" layoutY="207.0" mnemonicParsing="false"   onAction="#handleSearchArtist"      style="-fx-background-color: #4CAF50; -fx-text-fill: white;" text="Search Artists">
                <font>
                   <Font size="15.0" />
                </font></Button>

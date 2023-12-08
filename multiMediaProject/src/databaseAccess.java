@@ -105,6 +105,36 @@ public class databaseAccess {
         return songs;
     }
 
+    public static List<List<String>> sortSongsByArtist(String artistName, String order, int limit) {
+        List<List<String>> songs = new ArrayList<>();
+        String selectSQL = "SELECT AR.name as artistName, S.name as songName, S.length, S.date " +
+                "FROM Artists AR " +
+                "JOIN AlbumSongs ASs on AR.artistID = ASs.albumArtistID " +
+                "JOIN Songs S on S.songID = ASs.albumSongID " +
+                "WHERE AR.name = ? ORDER BY S.name " + order + " LIMIT ?";
+    
+        try (PreparedStatement preparedStatement = connection.prepareStatement(selectSQL)) {
+            preparedStatement.setString(1, artistName);
+            preparedStatement.setInt(2, limit); // Set the limit parameter
+    
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                List<String> song = new ArrayList<>();
+                song.add("artist: " + resultSet.getString("artistName"));
+                song.add("song: " + resultSet.getString("songName"));
+                song.add("length: " + formatTime(resultSet.getInt("length")));
+                song.add("date: " + resultSet.getString("date"));
+    
+                songs.add(song);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace(); // Handle exceptions appropriately
+        }
+    
+        return songs;
+    }
+
+
     public static List<List<String>> getSongListWithPrefixAndLimit(String prefix, int limit) {
         List<List<String>> songs = new ArrayList<>();
         String selectSQL = "SELECT AR.name as artistName, S.name as songName, S.length, S.date\n" +
