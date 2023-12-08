@@ -58,11 +58,11 @@
                <font>
                   <Font size="15.0" />
                </font></Button>
-                <Button fx:id="searchArtist" layoutX="21.0" layoutY="207.0" mnemonicParsing="false" onAction="#handleSearchArtist" style="-fx-background-color: #4CAF50;" text="Search Artists">
+                <Button fx:id="searchArtist" layoutX="22.0" layoutY="182.0" mnemonicParsing="false" onAction="#handleSearchArtist" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" text="Search Artists">
                <font>
                   <Font size="15.0" />
                </font></Button>
-                <Button fx:id="searchAlbum" layoutX="18.0" layoutY="335.0" mnemonicParsing="false" onAction="#handleSearchAlbum" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" text="Search Albums">
+                <Button fx:id="searchAlbum" layoutX="18.0" layoutY="277.0" mnemonicParsing="false" onAction="#handleSearchAlbum" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" text="Search Albums">
                <font>
                   <Font size="15.0" />
                </font></Button>
@@ -91,13 +91,18 @@
                 <Label layoutX="170.0" style="-fx-font-size: 18; -fx-font-weight: bold;" text="Your Liked Songs" textFill="WHITE" />
                 <!-- Add style to text fields -->
                 <TextField fx:id="searchSongField" layoutX="6.0" layoutY="132.0" prefHeight="26.0" prefWidth="142.0" style="-fx-background-color: #fafafa;" />
-                <TextField fx:id="searchArtistField" layoutX="5.0" layoutY="254.0" prefHeight="26.0" prefWidth="142.0" style="-fx-background-color: #fafafa;" />
-                <TextField fx:id="searchAlbumField" layoutX="6.0" layoutY="385.0" prefHeight="26.0" prefWidth="142.0" style="-fx-background-color: #fafafa;" />
+                <TextField fx:id="searchArtistField" layoutX="5.0" layoutY="223.0" prefHeight="26.0" prefWidth="142.0" style="-fx-background-color: #fafafa;" />
+                <TextField fx:id="searchAlbumField" layoutX="6.0" layoutY="318.0" prefHeight="26.0" prefWidth="142.0" style="-fx-background-color: #fafafa;" />
                 <!-- Add style to image views -->
                 <ImageView fx:id="img1" fitHeight="120.0" fitWidth="120.0" layoutX="170.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" />
                 <!-- Add style to list views -->
                 <ListView fx:id="list1" layoutX="170.0" layoutY="168.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="110.0" prefWidth="120.0" style="-fx-background-color: #4CAF50;" stylesheets="@styles.css" />
             <Label layoutX="50.0" prefHeight="27.0" prefWidth="52.0" style="-fx-font-size: 18; -fx-font-weight: bold;" text="Menu" textAlignment="CENTER" textFill="WHITE" />
+            <Button fx:id="searchPlaylist" layoutX="23.0" layoutY="359.0" mnemonicParsing="false" onAction="#handlePlaylist" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" text="View Playlists">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
                 <!-- Repeat the styles for the rest of the elements -->
                 <!-- ... -->
             </children>

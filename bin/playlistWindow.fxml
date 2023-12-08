@@ -45,14 +45,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="560.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="songWindow">
+<VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="560.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="playlistWindow">
   <children>
     <MenuBar style="-fx-background-color: #000000;" VBox.vgrow="NEVER">
       <menus>
         <Menu mnemonicParsing="false" text="Home" />
             <Menu fx:id="handleBackButton" mnemonicParsing="false" onAction="#handleBackButton" text="Back">
               <items>
-                <MenuItem mnemonicParsing="false" text="Home" />
+                <MenuItem mnemonicParsing="false" text="Action 1" />
               </items>
             </Menu>
       </menus>
@@ -61,30 +61,29 @@
       <children>
             <Separator layoutX="151.0" layoutY="4.0" orientation="VERTICAL" prefHeight="526.0" prefWidth="3.0" />
             <ImageView fx:id="img1" fitHeight="120.0" fitWidth="120.0" layoutX="170.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true" />
-            <ListView fx:id="list1" layoutX="170.0" layoutY="160.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="110.0" prefWidth="120.0" style="-fx-background-color: #4CAF50;" stylesheets="@styles.css" />
+            <ListView fx:id="list1" layoutX="170.0" layoutY="160.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="110.0" prefWidth="120.0" stylesheets="@styles.css" />
             <ImageView fx:id="img2" fitHeight="120.0" fitWidth="120.0" layoutX="330.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true" />
-            <ListView fx:id="list2" layoutX="330.0" layoutY="160.0" prefHeight="110.0" prefWidth="120.0" style="-fx-background-color: #4CAF50;" stylesheets="@styles.css" />
+            <ListView fx:id="list2" layoutX="330.0" layoutY="160.0" prefHeight="110.0" prefWidth="120.0" stylesheets="@styles.css" />
             <ImageView fx:id="img3" fitHeight="120.0" fitWidth="120.0" layoutX="490.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" />
-            <ListView fx:id="list3" layoutX="490.0" layoutY="160.0" prefHeight="110.0" prefWidth="120.0" style="-fx-background-color: #4CAF50;" stylesheets="@styles.css" />
+            <ListView fx:id="list3" layoutX="490.0" layoutY="160.0" prefHeight="110.0" prefWidth="120.0" stylesheets="@styles.css" />
             <ImageView fx:id="img4" fitHeight="120.0" fitWidth="120.0" layoutX="650.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" />
-            <ListView fx:id="list4" layoutX="650.0" layoutY="160.0" prefHeight="110.0" prefWidth="120.0" style="-fx-background-color: #4CAF50;" stylesheets="@styles.css" />
+            <ListView fx:id="list4" layoutX="650.0" layoutY="160.0" prefHeight="110.0" prefWidth="120.0" stylesheets="@styles.css" />
             <ImageView fx:id="img5" fitHeight="120.0" fitWidth="120.0" layoutX="170.0" layoutY="280.0" pickOnBounds="true" preserveRatio="true" />
-            <ListView fx:id="list5" layoutX="170.0" layoutY="415.0" prefHeight="110.0" prefWidth="120.0" style="-fx-background-color: #4CAF50;" stylesheets="@styles.css" />
+            <ListView fx:id="list5" layoutX="170.0" layoutY="415.0" prefHeight="110.0" prefWidth="120.0" stylesheets="@styles.css" />
             <ImageView fx:id="img6" fitHeight="120.0" fitWidth="120.0" layoutX="330.0" layoutY="280.0" pickOnBounds="true" preserveRatio="true" />
-            <ListView fx:id="list6" layoutX="330.0" layoutY="415.0" prefHeight="110.0" prefWidth="120.0" style="-fx-background-color: #4CAF50;" stylesheets="@styles.css" />
+            <ListView fx:id="list6" layoutX="330.0" layoutY="415.0" prefHeight="110.0" prefWidth="120.0" stylesheets="@styles.css" />
             <ImageView fx:id="img7" fitHeight="120.0" fitWidth="120.0" layoutX="490.0" layoutY="280.0" pickOnBounds="true" preserveRatio="true" />
-            <ListView fx:id="list7" layoutX="490.0" layoutY="415.0" prefHeight="110.0" prefWidth="120.0" style="-fx-background-color: #4CAF50;" stylesheets="@styles.css" />
-            <ListView fx:id="list8" layoutX="650.0" layoutY="415.0" prefHeight="110.0" prefWidth="120.0" style="-fx-background-color: #4CAF50;" stylesheets="@styles.css" />
+            <ListView fx:id="list7" layoutX="490.0" layoutY="415.0" prefHeight="110.0" prefWidth="120.0" stylesheets="@styles.css" />
+            <ListView fx:id="list8" layoutX="650.0" layoutY="415.0" prefHeight="110.0" prefWidth="120.0" stylesheets="@styles.css" />
             <ImageView fx:id="img8" fitHeight="120.0" fitWidth="120.0" layoutX="650.0" layoutY="280.0" pickOnBounds="true" preserveRatio="true" />
             <Label layoutX="172.0" layoutY="6.0" text="Song Results" />
-            <ComboBox fx:id="sortSongs" layoutX="10.0" layoutY="48.0" prefHeight="26.0" prefWidth="133.0" promptText="Select sorting method" />
-            <Label layoutX="16.0" layoutY="23.0" text="Select sorting method" />
-            <Button fx:id="add" layoutX="26.0" layoutY="470.0" mnemonicParsing="false" onAction="#handleAddSong" prefHeight="26.0" prefWidth="100.0" text="Insert Song" />
-            <TextField fx:id="searchSongField" layoutX="26.0" layoutY="85.0" prefHeight="26.0" prefWidth="100.0" promptText="Enter Song" />
-            <Button fx:id="search" layoutX="26.0" layoutY="119.0" mnemonicParsing="false" onAction="#handleSearchSong" prefHeight="26.0" prefWidth="100.0" text="Search Songs" />
+            <ComboBox fx:id="sortSongs" layoutX="14.0" layoutY="48.0" prefHeight="26.0" prefWidth="133.0" promptText="Select sorting method" />
+            <Label layoutX="21.0" layoutY="25.0" text="Select sorting method" />
+            <TextField fx:id="playlist" layoutX="26.0" layoutY="457.0" prefHeight="26.0" prefWidth="100.0" promptText="Enter Playlist" />
+            <Button fx:id="createPlaylist" layoutX="26.0" layoutY="421.0" mnemonicParsing="false" onAction="#handleCreatePlaylist" prefHeight="26.0" prefWidth="100.0" text="Create Playlist" />
+            <Button fx:id="search" layoutX="26.0" layoutY="119.0" mnemonicParsing="false" onAction="#handleSearchPlaylist" prefHeight="26.0" prefWidth="100.0" text="Search Playlist" />
             <TextField fx:id="limit" layoutX="44.0" layoutY="151.0" prefHeight="26.0" prefWidth="64.0" promptText="Set Limit" />
-            <ComboBox fx:id="populatedSongs" layoutX="6.0" layoutY="434.0" prefHeight="26.0" prefWidth="142.0" promptText="Select Song" />
-            <ComboBox fx:id="playlists" layoutX="6.0" layoutY="400.0" prefHeight="26.0" prefWidth="142.0" promptText="Select Playlist" />
+            <ComboBox fx:id="selectPlaylist" layoutX="14.0" layoutY="85.0" prefHeight="26.0" prefWidth="133.0" promptText="Select Playlist" />
       </children>
     </AnchorPane>
   </children>

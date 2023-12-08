@@ -1,7 +1,9 @@
 import java.util.List;
+
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -11,7 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
-public class songWindow {
+public class playlistWindow {
 
     @FXML
     private ObservableList<ImageView> imageViews = FXCollections.observableArrayList();
@@ -20,7 +22,7 @@ public class songWindow {
     private ObservableList<ListView<String>> listViews = FXCollections.observableArrayList();
 
     @FXML
-    private Button add;
+    private Button createPlaylist;
 
     @FXML
     private Menu handleBackButton;
@@ -77,27 +79,25 @@ public class songWindow {
     private ListView<String> list8;
 
     @FXML
-    private Button search;
+    private TextField playlist;
 
     @FXML
-    private TextField searchSongField;
+    private ComboBox<String> selectPlaylist;
+
+    @FXML
+    private Button search;
+
+
 
     @FXML
     private ComboBox<String> sortSongs;
 
-    @FXML
-    private ComboBox<String> populatedSongs;
-
-    @FXML
-    private ComboBox<String> playlists;
-
-    public void initialize() {
+   public void initialize() {
         // Add your ImageView and ListView instances to the observable lists during
         // initialization
         imageViews.addAll(img1, img2, img3, img4, img5, img6, img7, img8);
         listViews.addAll(list1, list2, list3, list4, list5, list6, list7, list8);
-        List<String> createdPlaylists = databaseAccess.getPlaylists();
-        playlists.getItems().addAll(createdPlaylists);
+
         // Hide all ImageViews and ListViews initially
         hideAll();
         sortSongs.getItems().addAll(
@@ -107,6 +107,7 @@ public class songWindow {
                 "Oldest Songs",
                 "Alphabetically Ascending",
                 "Alphabetically Descending");
+        populatePlaylists();
     }
 
     private void hideAll() {
@@ -120,9 +121,15 @@ public class songWindow {
         }
     }
 
+    public void populatePlaylists(){
+        selectPlaylist.getItems().clear();
+        List<String> playlists = databaseAccess.getPlaylists();
+        selectPlaylist.getItems().addAll(playlists);
+    }
+
     public void handleBackButton() {
         // Handle back button click
-        Stage stage = (Stage) add.getScene().getWindow(); // Get the current stage
+        Stage stage = (Stage) createPlaylist.getScene().getWindow(); // Get the current stage
         stage.close(); // Close the current stage
         homeWindowClass homeWindow = new homeWindowClass();
         try {
@@ -132,28 +139,26 @@ public class songWindow {
         }
     }
 
-    public void handleSearchSong() {
-        String songPrefix = searchSongField.getText().trim();
-        if (!songPrefix.isEmpty()) {
+    public void handleSearchPlaylist() {
+        String playlist = selectPlaylist.getSelectionModel().getSelectedItem();
+        if (playlist != null) {
             int limit = getLimitValue();
             String searchCriteria = sortSongs.getSelectionModel().getSelectedItem();
-            System.out.println("SEARCH CRITERIA IS " + searchCriteria);
             List<List<String>> songs;
             if (limit != -1) {
 
                 if (searchCriteria != null) {
-                    songs = databaseAccess.getSongListWithPrefixAndLimit(songPrefix, limit, searchCriteria);
+                    songs = databaseAccess.getSongListInPlaylist(playlist, searchCriteria, limit);
                 } else {
-                    songs = databaseAccess.getSongListWithPrefixAndLimit(songPrefix, limit);
+                    songs = databaseAccess.getSongListInPlaylist(playlist, limit);
                 }
             } else {
                 if (searchCriteria != null) {
-                    songs = databaseAccess.getSongListWithPrefixAndLimit(songPrefix, 8, searchCriteria);
+                    songs = databaseAccess.getSongListInPlaylist(playlist, searchCriteria, 8);
                 } else {
-                    songs = databaseAccess.getSongListWithPrefixAndLimit(songPrefix, 8);
+                    songs = databaseAccess.getSongListInPlaylist(playlist, 8);
                 }
             }
-
             populateListViews(songs);
 
         } else {
@@ -161,20 +166,8 @@ public class songWindow {
         }
     }
 
-    public void handleAddSong(){
-        String selectedPlaylist = playlists.getSelectionModel().getSelectedItem();
-        String selectedSong = populatedSongs.getSelectionModel().getSelectedItem();
-        // Check if both playlist and song are selected
-        if (selectedPlaylist != null && selectedSong != null) {
-            databaseAccess.addSongToPlaylist(selectedPlaylist, selectedSong);
-            System.out.println("Song added to playlist successfully!");
-        
-        } else {
-            System.out.println("Please select both a playlist and a song to add.");
-        }
-    }
-
     public void insertData(int index, String data) {
+        System.out.println("data is" + index + data);
         Platform.runLater(() -> {
             // Insert data into the corresponding ListView based on the index
             listViews.get(index).getItems().add(data);
@@ -209,12 +202,9 @@ public class songWindow {
 
     public void populateListViews(List<List<String>> songs) {
         clearAll();
-        populatedSongs.getItems().clear();
-        for (int i = 0; i < songs.size(); i++){
-            populatedSongs.getItems().add(songs.get(i).get(1).split(":")[1].trim()); //get only the song name
-        }
         for (int i = 0; i < songs.size(); i++) {
             List<String> curSongData = songs.get(i);
+            System.out.println("got here");
             for (String data : curSongData) {
                 final int index = i; // need to make it final to use inside runLater
                 Platform.runLater(() -> {
@@ -223,6 +213,31 @@ public class songWindow {
             }
         }
     }
+
+    public void handleCreatePlaylist() {
+        // Retrieve the playlist name from the text field
+        String playlistName = playlist.getText().trim();
+
+        // Check if the playlist name is not empty
+        if (!playlistName.isEmpty()) {
+            // Call the method to create the playlist (replace the comments with your logic)
+            // databaseAccess.createPlaylist(playlistName);
+            System.out.println("Playlist created: " + playlistName);
+            if (!databaseAccess.playlistExists(playlistName)) {
+                // Playlist does not exist, so insert it
+                databaseAccess.addPlaylist(playlistName);
+                selectPlaylist.getItems().add(playlistName);
+                System.out.println("playlist created successfully");
+            } else {
+                // Playlist already exists
+                System.out.println("Playlist already exists: " + playlistName);
+            }
+        } else {
+            // Playlist name is empty, print a message to the console
+            System.out.println("Please enter a playlist name.");
+        }
+    }
+
 
     public void clearAll() {
         // Clear data from all ListViews
@@ -239,3 +254,4 @@ public class songWindow {
         hideAll();
     }
 }
+
