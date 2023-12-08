@@ -211,7 +211,7 @@ public class songWindow {
         clearAll();
         populatedSongs.getItems().clear();
         for (int i = 0; i < songs.size(); i++){
-            populatedSongs.getItems().add(songs.get(i).get(1));
+            populatedSongs.getItems().add(songs.get(i).get(1).split(":")[1].trim());
         }
         for (int i = 0; i < songs.size(); i++) {
             List<String> curSongData = songs.get(i);

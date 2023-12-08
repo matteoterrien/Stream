@@ -232,9 +232,9 @@ public class homeWindow {
 
     public void insertImage(int index, String imagePath) {
         InputStream imageStream = getClass().getResourceAsStream(imagePath);
+        System.out.println(imageStream);
         if (imageStream == null) {
             System.err.println("Image not found: " + imagePath);
-            return;
         }
 
         Image image = new Image(imageStream);
@@ -322,6 +322,23 @@ public class homeWindow {
             e.printStackTrace(); // Handle exceptions appropriately
         }
     }
+
+    public void populateListViews(List<List<String>> songs, List<String> imagePaths) {
+        clearAll();
+        for (int i = 0; i < imagePaths.size(); i++){
+            insertImage(i, imagePaths.get(i));
+        }
+        for (int i = 0; i < songs.size(); i++) {
+            List<String> curSongData = songs.get(i);
+            for (String data : curSongData) {
+                final int index = i; // need to make it final to use inside runLater
+                Platform.runLater(() -> {
+                    insertData(index, data);
+                });
+            }
+        }
+    }
+
 
     public void clearAll() {
         // Clear data from all ListViews

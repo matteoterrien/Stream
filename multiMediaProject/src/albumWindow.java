@@ -98,13 +98,16 @@ public class albumWindow{
     private TextField playlist;
 
     @FXML
-    private TextField songText;
+    private ComboBox<String> populatedSongs;
+
+    @FXML
+    private ComboBox<String> populatedPlaylists;
     
     public void initialize() {
         // Add your ListView instances to the observable lists during initialization
         listViews.addAll(list1, list2, list3, list4, list5, list6, list7, list8, list9, list10, list11, list12);
-
         // Hide all ImageViews and ListViews initially
+        populatedPlaylists.getItems().addAll(databaseAccess.getPlaylists());
         hideAll();
 
     }
@@ -233,8 +236,10 @@ public class albumWindow{
 
     public void populateListViews(List<List<String>> songs) {
         clearAll();
+        populatedSongs.getItems().clear();
         for (int i = 0; i < songs.size(); i++) {
             List<String> curSongData = songs.get(i);
+            populatedSongs.getItems().add(curSongData.get(1).split(":")[1].trim());
             System.out.println("got here");
             for (String data : curSongData) {
                 final int index = i; // need to make it final to use inside runLater
@@ -246,19 +251,16 @@ public class albumWindow{
     }
 
     public void handleAddButton(ActionEvent event) {
-        String playlistName = playlist.getText();
-        String songName = songText.getText();
+        String playlistName = populatedPlaylists.getSelectionModel().getSelectedItem();
+        String songName = populatedSongs.getSelectionModel().getSelectedItem();
 
-        if (playlistName.isEmpty() || songName.isEmpty()) {
-            // Display an error message or take appropriate action if fields are empty
-            consoleOutput.setText("Both Playlist and Song Text must be provided.");
-            // You might want to show a label or display a dialog to inform the user.
+        if (playlistName != null && songName != null) {
+            databaseAccess.addSongToPlaylist(playlistName, songName);
+            System.out.println("Song added to playlist successfully!");
+        
         } else {
-            // Both fields have data, proceed with your query or other actions
-            // Example: Execute your database query or perform other actions
-            consoleOutput.setText("Insert successfull");
-            // databaseAccess.addSongToPlaylist(playlistName, songName);
+            System.out.println("Please select both a playlist and a song to add.");
         }
     }
-
 }
+

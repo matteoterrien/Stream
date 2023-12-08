@@ -4,6 +4,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class databaseAccess {
@@ -292,7 +293,7 @@ public class databaseAccess {
         List<List<String>> songs = new ArrayList<>();
         String selectSQL = "SELECT AR.name AS artistName, S.name AS songName, S.length, S.date\n" +
                    "FROM Playlists P\n" +
-                   "JOIN PlaylistSongs PS ON P.playlistID = PS.playlistID\n" +
+                   "JOIN PlaylistsSongs PS ON P.playlistID = PS.playlistID\n" +
                    "JOIN Songs S ON S.songID = PS.songID\n" +
                    "JOIN SongsToArtist SA ON S.songID = SA.songID\n" +
                    "JOIN Artists AR ON AR.artistID = SA.artistID\n" +
@@ -388,23 +389,95 @@ public class databaseAccess {
             // Get playlist ID
             playlistIDStatement.setString(1, playlistName);
             ResultSet playlistIDResultSet = playlistIDStatement.executeQuery();
-            int playlistID = playlistIDResultSet.getInt("playlistID");
+            
+            if (playlistIDResultSet.next()) { // Check if there is a result
+                int playlistID = playlistIDResultSet.getInt("playlistID");
     
-            // Get song ID
-            songIDStatement.setString(1, songName);
-            ResultSet songIDResultSet = songIDStatement.executeQuery();
-            int songID = songIDResultSet.getInt("songID");
+                // Get song ID
+                songIDStatement.setString(1, songName);
+                ResultSet songIDResultSet = songIDStatement.executeQuery();
     
-            // Insert into PlaylistsSongs
-            insertStatement.setInt(1, playlistID);
-            insertStatement.setInt(2, songID);
-            insertStatement.executeUpdate();
-
+                if (songIDResultSet.next()) { // Check if there is a result
+                    int songID = songIDResultSet.getInt("songID");
+    
+                    // Insert into PlaylistsSongs
+                    insertStatement.setInt(1, playlistID);
+                    insertStatement.setInt(2, songID);
+                    insertStatement.executeUpdate();
+                } else {
+                    System.out.println("Song not found: " + songName);
+                }
+            } else {
+                System.out.println("Playlist ID not found for playlist: " + playlistName);
+            }
+    
         } catch (SQLException e) {
             e.printStackTrace(); // Handle exceptions appropriately
         }
     }
 
+
+    public static List<String> getPlaylistImageURLs(String playlistName, int limit) {
+        List<String> imageURLs = new ArrayList<>();
+        String selectSQL = "SELECT A.imageURL " +
+                           "FROM Albums A " +
+                           "JOIN AlbumSongs ASs ON A.albumID = ASs.albumID " +
+                           "JOIN PlaylistsSongs PS ON ASs.albumSongID = PS.songID " +
+                           "JOIN Playlists P ON P.playlistID = PS.playlistID " +
+                           "WHERE P.playlistTitle = ? " +
+                           "LIMIT ?;";
+    
+        try (PreparedStatement preparedStatement = connection.prepareStatement(selectSQL)) {
+            preparedStatement.setString(1, playlistName);
+            preparedStatement.setInt(2, limit);
+    
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                while (resultSet.next()) {
+                    // Add each imageURL to the list
+                    imageURLs.add(resultSet.getString("imageURL"));
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            // throw e; // Re-throw the exception to signal the error to the caller
+        }
+        return imageURLs;
+    }
+
+    public static List<String> getImageURLsForSongs(List<String> songNames, int limit) {
+    List<String> imageURLs = new ArrayList<>();
+    
+    // Create a placeholder for the list of song parameters in the SQL query
+    String songNamePlaceholders = String.join(",", Collections.nCopies(songNames.size(), "?"));
+
+    String selectSQL = "SELECT A.imageURL " +
+                       "FROM Albums A " +
+                       "JOIN AlbumSongs ASs ON A.albumID = ASs.albumID " +
+                       "JOIN Songs S ON S.songID = ASs.albumSongID " +
+                       "WHERE S.name IN (" + songNamePlaceholders + ") " +
+                       "LIMIT ?;";
+
+    try (PreparedStatement preparedStatement = connection.prepareStatement(selectSQL)) {
+        // Set the parameters for song names
+        for (int i = 0; i < songNames.size(); i++) {
+            preparedStatement.setString(i + 1, songNames.get(i));
+        }
+        
+        // Set the parameter for the limit
+        preparedStatement.setInt(songNames.size() + 1, limit);
+
+        try (ResultSet resultSet = preparedStatement.executeQuery()) {
+            while (resultSet.next()) {
+                // Add each imageURL to the list
+                imageURLs.add(resultSet.getString("imageURL"));
+            }
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+        // Handle exceptions appropriately, throw or return a default value
+    }
+    return imageURLs;
+}
 
     public static String formatTime(int seconds) {
         int hours = seconds / 3600;
@@ -413,4 +486,6 @@ public class databaseAccess {
 
         return String.format("%02d:%02d:%02d", hours, minutes, remainingSeconds);
     }
+
+    
 }

@@ -28,7 +28,7 @@ public class albumWindowClass extends Application {
 
         // Get the controller instance
         albumWindow controller = loader.getController();
-        controller.initialize();
+        //controller.initialize();
         controller.setAlbumName(albumName);
         controller.setAlbumData(albumName, controller);
 

@@ -1,3 +1,5 @@
+import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 import javafx.application.Platform;
@@ -10,6 +12,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Menu;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
@@ -125,6 +128,7 @@ public class playlistWindow {
         selectPlaylist.getItems().clear();
         List<String> playlists = databaseAccess.getPlaylists();
         selectPlaylist.getItems().addAll(playlists);
+
     }
 
     public void handleBackButton() {
@@ -202,9 +206,12 @@ public class playlistWindow {
 
     public void populateListViews(List<List<String>> songs) {
         clearAll();
+        List<String> songList = new ArrayList<String>();
         for (int i = 0; i < songs.size(); i++) {
             List<String> curSongData = songs.get(i);
             System.out.println("got here");
+            songList.add(curSongData.get(1).split(":")[1].trim());
+
             for (String data : curSongData) {
                 final int index = i; // need to make it final to use inside runLater
                 Platform.runLater(() -> {
@@ -212,6 +219,26 @@ public class playlistWindow {
                 });
             }
         }
+        System.out.println("NOw going to insert image?");
+        List<String> imageURLs = databaseAccess.getImageURLsForSongs(songList, 8);
+        for (int i = 0; i < imageURLs.size(); i++){
+            System.out.println(imageURLs.get(i));
+            insertImage(i, imageURLs.get(i));
+        }
+    }
+
+    public void insertImage(int index, String imagePath) {
+        InputStream imageStream = getClass().getResourceAsStream(imagePath);
+        System.out.println(imageStream);
+        if (imageStream == null) {
+            System.err.println("Image not found: " + imagePath);
+        }
+
+        Image image = new Image(imageStream);
+        imageViews.get(index).setImage(image);
+
+        // Set visibility to true for the corresponding ImageView
+        showData(index, true);
     }
 
     public void handleCreatePlaylist() {

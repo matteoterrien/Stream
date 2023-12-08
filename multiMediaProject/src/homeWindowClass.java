@@ -1,8 +1,12 @@
+import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -10,7 +14,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class homeWindowClass extends Application {      
+public class homeWindowClass extends Application {
 
     public static Connection connect;
 
@@ -23,14 +27,10 @@ public class homeWindowClass extends Application {
             // Get the controller instance
             homeWindow controller = loader.getController();
             controller.initialize();
-            controller.insertData(0, "name: Mirrors");
-            controller.insertData(0, "length: 4:37");
-            controller.insertData(0, "album: The 20/20 Experience");
-            controller.insertData(0, "artist: Justin Timberlake");
-            controller.insertImage(0, "The 20:20 experience.jpg");
-
-            controller.insertData(1, "cat");
-
+            List<String> imageURLs = databaseAccess.getPlaylistImageURLs("Liked Songs", 8);
+            List<List<String>> songs = databaseAccess.getSongListInPlaylist("Liked Songs", 8);
+            controller.populateListViews(songs, imageURLs);
+            // controller.insertImage(0, "The Dark Side of the Moon.jpg");
             // controller.clearAll();
             Scene scene = new Scene(root, 800, 600);
             primaryStage.setScene(scene);
@@ -93,5 +93,4 @@ public class homeWindowClass extends Application {
             e.printStackTrace(); // Handle exceptions appropriately
         }
     }
-
 }
