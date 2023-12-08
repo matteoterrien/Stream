@@ -27,7 +27,6 @@ public class songWindowClass extends Application {
 
         // Get the controller instance
         songWindow controller = loader.getController();
-        controller.initialize();
         System.out.println("populating lists");
         System.out.println("songs are " + songSearch);
         System.out.println(databaseAccess.getSongListWithPrefixAndLimit(songSearch, 8));

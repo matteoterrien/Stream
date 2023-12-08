@@ -1,14 +1,15 @@
 {
-  "java.project.referencedLibraries": [
-    "lib/**/*.jar",
-    "/Users/matteo.terrien/Downloads/javafx-sdk-21.0.1/lib/javafx-swt.jar",
-    "/Users/matteo.terrien/Downloads/javafx-sdk-21.0.1/lib/javafx.base.jar",
-    "/Users/matteo.terrien/Downloads/javafx-sdk-21.0.1/lib/javafx.controls.jar",
-    "/Users/matteo.terrien/Downloads/javafx-sdk-21.0.1/lib/javafx.fxml.jar",
-    "/Users/matteo.terrien/Downloads/javafx-sdk-21.0.1/lib/javafx.graphics.jar",
-    "/Users/matteo.terrien/Downloads/javafx-sdk-21.0.1/lib/javafx.media.jar",
-    "/Users/matteo.terrien/Downloads/javafx-sdk-21.0.1/lib/javafx.swing.jar",
-    "/Users/matteo.terrien/Downloads/javafx-sdk-21.0.1/lib/javafx.web.jar",
-    "/Users/matteo.terrien/Downloads/mysql-connector-j-8.2.0/mysql-connector-j-8.2.0.jar"
-  ]
+  "java.project.sourcePaths": [
+      "src"
+  ],
+  "java.project.outputPath": "bin",
+  "java.project.referencedLibraries": {
+      "include": [
+          "lib/**/*.jar",
+          "/Users/bretthillyard/Desktop/javafx-sdk-21.0.1/lib/**/*.jar",
+          "/Users/bretthillyard/Desktop/javafx-sdk-21.0.1 2/lib/**/*.jar",
+          "/Users/bretthillyard/Desktop/javafx-sdk-21.0.1/**/*.jar",
+          "/Users/bretthillyard/Desktop/mysql-connector-j-8.2.0.jar"
+      ]
+  }
 }

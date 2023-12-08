@@ -42,45 +42,65 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="560.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="homeWindow">
-  <children>
-    <MenuBar VBox.vgrow="NEVER">
-      <menus>
-        <Menu mnemonicParsing="false" text="Home" />
-      </menus>
-    </MenuBar>
-    <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="474.0" prefWidth="748.0" VBox.vgrow="ALWAYS">
-      <children>
-            <Button fx:id="searchSong" layoutX="30.0" layoutY="27.0" mnemonicParsing="false" text="Search Songs" />
-            <Button fx:id="searchArtist" layoutX="30.0" layoutY="231.0" mnemonicParsing="false" text="Search Artists" />
-            <Button fx:id="searchAlbum" layoutX="26.0" layoutY="445.0" mnemonicParsing="false" onAction="#handleSearchAlbum" text="Search Albums" />
-            <Separator layoutX="151.0" layoutY="4.0" orientation="VERTICAL" prefHeight="526.0" prefWidth="3.0" />
-            <ImageView fx:id="img1" fitHeight="100.0" fitWidth="100.0" layoutX="170.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" />
-            <ListView fx:id="list1" layoutX="170.0" layoutY="160.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="110.0" prefWidth="100.0" stylesheets="@styles.css" />
-            <ImageView fx:id="img2" fitHeight="100.0" fitWidth="100.0" layoutX="290.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" />
-            <ListView fx:id="list2" layoutX="290.0" layoutY="160.0" prefHeight="110.0" prefWidth="100.0" stylesheets="@styles.css" />
-            <ImageView fx:id="img3" fitHeight="100.0" fitWidth="100.0" layoutX="410.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" />
-            <ListView fx:id="list3" layoutX="410.0" layoutY="160.0" prefHeight="110.0" prefWidth="100.0" stylesheets="@styles.css" />
-            <ImageView fx:id="img4" fitHeight="100.0" fitWidth="100.0" layoutX="530.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" />
-            <ListView fx:id="list4" layoutX="530.0" layoutY="160.0" prefHeight="110.0" prefWidth="100.0" stylesheets="@styles.css" />
-            <ImageView fx:id="img5" fitHeight="100.0" fitWidth="100.0" layoutX="650.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" />
-            <ListView fx:id="list5" layoutX="650.0" layoutY="160.0" prefHeight="110.0" prefWidth="100.0" stylesheets="@styles.css" />
-            <ImageView fx:id="img6" fitHeight="100.0" fitWidth="100.0" layoutX="170.0" layoutY="280.0" pickOnBounds="true" preserveRatio="true" />
-            <ListView fx:id="list6" layoutX="170.0" layoutY="390.0" prefHeight="110.0" prefWidth="100.0" stylesheets="@styles.css" />
-            <ImageView fx:id="img7" fitHeight="100.0" fitWidth="100.0" layoutX="290.0" layoutY="280.0" pickOnBounds="true" preserveRatio="true" />
-            <ListView fx:id="list7" layoutX="290.0" layoutY="390.0" prefHeight="110.0" prefWidth="100.0" stylesheets="@styles.css" />
-            <ListView fx:id="list8" layoutX="410.0" layoutY="390.0" prefHeight="110.0" prefWidth="100.0" stylesheets="@styles.css" />
-            <ListView fx:id="list9" layoutX="533.0" layoutY="390.0" prefHeight="110.0" prefWidth="100.0" stylesheets="@styles.css" />
-            <ListView fx:id="list10" layoutX="650.0" layoutY="390.0" prefHeight="110.0" prefWidth="100.0" stylesheets="@styles.css" />
-            <ImageView fx:id="img8" fitHeight="100.0" fitWidth="100.0" layoutX="410.0" layoutY="280.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="img9" fitHeight="100.0" fitWidth="100.0" layoutX="530.0" layoutY="280.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="img10" fitHeight="100.0" fitWidth="100.0" layoutX="650.0" layoutY="280.0" pickOnBounds="true" preserveRatio="true" />
-            <Label layoutX="174.0" layoutY="18.0" text="Your Liked Songs" />
-            <TextField fx:id="searchSongField" layoutX="5.0" layoutY="60.0" prefHeight="26.0" prefWidth="142.0" />
-            <TextField fx:id="searchArtistField" layoutX="6.0" layoutY="265.0" prefHeight="26.0" prefWidth="142.0" />
-            <TextField fx:id="searchAlbumField" layoutX="6.0" layoutY="480.0" prefHeight="26.0" prefWidth="142.0" />
-      </children>
-    </AnchorPane>
-  </children>
+    <children>
+        <MenuBar style="-fx-background-color: #000000;" VBox.vgrow="NEVER">
+            <menus>
+                <Menu mnemonicParsing="false" text="Home" />
+            </menus>
+        </MenuBar>
+        <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="474.0" prefWidth="748.0" style="-fx-background-color: #000000;" VBox.vgrow="ALWAYS">
+            <children>
+                <!-- Add style to buttons -->
+                <Button fx:id="searchSong" layoutX="22.0" layoutY="84.0" mnemonicParsing="false" onAction="#handleSearchSong" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" text="Search Songs" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font></Button>
+                <Button fx:id="searchArtist" layoutX="21.0" layoutY="207.0" mnemonicParsing="false" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" text="Search Artists">
+               <font>
+                  <Font size="15.0" />
+               </font></Button>
+                <Button fx:id="searchAlbum" layoutX="18.0" layoutY="335.0" mnemonicParsing="false" onAction="#handleSearchAlbum" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" text="Search Albums">
+               <font>
+                  <Font size="15.0" />
+               </font></Button>
+                <!-- Add style to separator -->
+                <Separator layoutX="151.0" layoutY="4.0" orientation="VERTICAL" prefHeight="526.0" prefWidth="3.0" style="-fx-background-color: #B0BEC5;" />
+
+
+                <ImageView fx:id="img1" fitHeight="120.0" fitWidth="120.0" layoutX="170.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" />
+                <ListView fx:id="list1" layoutX="170.0" layoutY="168.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="110.0" prefWidth="120.0" stylesheets="@styles.css" />
+                <ImageView fx:id="img2" fitHeight="120.0" fitWidth="120.0" layoutX="330.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" />
+                <ListView fx:id="list2" layoutX="330.0" layoutY="168.0" prefHeight="110.0" prefWidth="120.0" stylesheets="@styles.css" />
+                <ImageView fx:id="img3" fitHeight="120.0" fitWidth="120.0" layoutX="490.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" />
+                <ListView fx:id="list3" layoutX="490.0" layoutY="168.0" prefHeight="110.0" prefWidth="120.0" stylesheets="@styles.css" />
+                <ImageView fx:id="img4" fitHeight="120.0" fitWidth="120.0" layoutX="650.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" />
+                <ListView fx:id="list4" layoutX="650.0" layoutY="168.0" prefHeight="110.0" prefWidth="120.0" stylesheets="@styles.css" />
+                <ImageView fx:id="img5" fitHeight="120.0" fitWidth="120.0" layoutX="170.0" layoutY="291.0" pickOnBounds="true" preserveRatio="true" />
+                <ListView fx:id="list5" layoutX="170.0" layoutY="415.0" prefHeight="110.0" prefWidth="120.0" stylesheets="@styles.css" />
+                <ImageView fx:id="img6" fitHeight="120.0" fitWidth="120.0" layoutX="330.0" layoutY="291.0" pickOnBounds="true" preserveRatio="true" />
+                <ListView fx:id="list6" layoutX="330.0" layoutY="415.0" prefHeight="110.0" prefWidth="120.0" stylesheets="@styles.css" />
+                <ImageView fx:id="img7" fitHeight="120.0" fitWidth="120.0" layoutX="490.0" layoutY="291.0" pickOnBounds="true" preserveRatio="true" />
+                <ListView fx:id="list7" layoutX="490.0" layoutY="415.0" prefHeight="110.0" prefWidth="120.0" stylesheets="@styles.css" />
+                <ListView fx:id="list8" layoutX="650.0" layoutY="415.0" prefHeight="110.0" prefWidth="120.0" stylesheets="@styles.css" />
+                <ImageView fx:id="img8" fitHeight="120.0" fitWidth="120.0" layoutX="650.0" layoutY="291.0" pickOnBounds="true" preserveRatio="true" />
+
+                <!-- Add style to labels -->
+                <Label layoutX="170.0" style="-fx-font-size: 18; -fx-font-weight: bold;" text="Your Liked Songs" textFill="WHITE" />
+                <!-- Add style to text fields -->
+                <TextField fx:id="searchSongField" layoutX="6.0" layoutY="132.0" prefHeight="26.0" prefWidth="142.0" style="-fx-background-color: #fafafa;" />
+                <TextField fx:id="searchArtistField" layoutX="5.0" layoutY="254.0" prefHeight="26.0" prefWidth="142.0" style="-fx-background-color: #fafafa;" />
+                <TextField fx:id="searchAlbumField" layoutX="6.0" layoutY="385.0" prefHeight="26.0" prefWidth="142.0" style="-fx-background-color: #fafafa;" />
+                <!-- Add style to image views -->
+                <ImageView fx:id="img1" fitHeight="120.0" fitWidth="120.0" layoutX="170.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" />
+                <!-- Add style to list views -->
+                <ListView fx:id="list1" layoutX="170.0" layoutY="168.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="110.0" prefWidth="120.0" style="-fx-background-color: #ffffff;" stylesheets="@styles.css" />
+            <Label layoutX="50.0" prefHeight="27.0" prefWidth="52.0" style="-fx-font-size: 18; -fx-font-weight: bold;" text="Menu" textAlignment="CENTER" textFill="WHITE" />
+                <!-- Repeat the styles for the rest of the elements -->
+                <!-- ... -->
+            </children>
+        </AnchorPane>
+    </children>
 </VBox>

@@ -96,5 +96,4 @@ public class homeWindowClass extends Application {
         }
     }
 
-    
 }

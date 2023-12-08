@@ -137,6 +137,65 @@ public class databaseAccess {
         return songs;
     }
 
+    public static List<List<String>> getSongListWithPrefixAndLimit(String prefix, int limit, String sortCriteria) {
+        List<List<String>> songs = new ArrayList<>();
+        String selectSQL = "SELECT AR.name as artistName, S.name as songName, S.length, S.date\n" +
+                "FROM Albums A\n" +
+                "JOIN AlbumSongs ASs on A.albumID = ASs.albumID\n" +
+                "JOIN Songs S on S.songID = ASs.albumSongID\n" +
+                "JOIN Artists AR on AR.artistID = ASs.albumArtistID\n" +
+                "WHERE S.name LIKE ?\n" +
+                "ORDER BY ";
+    
+        switch (sortCriteria.toLowerCase()) {
+            case "duration_desc":
+                selectSQL += "S.length DESC";
+                break;
+            case "duration_asc":
+                selectSQL += "S.length ASC";
+                break;
+            case "newest":
+                selectSQL += "S.date DESC";
+                break;
+            case "oldest":
+                selectSQL += "S.date ASC";
+                break;
+            case "alphabetical_asc":
+                selectSQL += "S.name ASC";
+                break;
+            case "alphabetical_desc":
+                selectSQL += "S.name DESC";
+                break;
+            default:
+                // Default to alphabetical ascending if no valid sort criteria provided
+                selectSQL += "S.name ASC";
+                break;
+        }
+    
+        selectSQL += "\nLIMIT ?;";
+    
+        try (PreparedStatement preparedStatement = connection.prepareStatement(selectSQL)) {
+            preparedStatement.setString(1, "%" + prefix + "%");
+            preparedStatement.setInt(2, limit);
+    
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                List<String> song = new ArrayList<>();
+                song.add("artist: " + resultSet.getString("artistName"));
+                song.add("song: " + resultSet.getString("songName"));
+                song.add("length: " + formatTime(resultSet.getInt("length")));
+                song.add("date: " + resultSet.getString("date"));
+    
+                songs.add(song);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            // Handle exceptions appropriately
+        }
+    
+        return songs;
+    }
+
     public static String formatTime(int seconds) {
         int hours = seconds / 3600;
         int minutes = (seconds % 3600) / 60;
