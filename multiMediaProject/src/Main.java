@@ -3,6 +3,12 @@ public class Main {
         ReadFile readFile = new ReadFile();
         readFile.readFile();
         valuesToSQL values = new valuesToSQL();
-        values.sendSongValues();
+        // values.sendSongValues();
+        // values.sendArtistValues();
+        //
+        values.sendAlbumValues();
+        values.sendAlbumSongsValues();
+        values.sendPaylistValues();
+        values.sendPlaylistSongsValues();
     }
 }
