@@ -103,6 +103,16 @@
                   <Font size="15.0" />
                </font>
             </Button>
+            <Button fx:id="playSong0" layoutX="196.0" layoutY="291.0" mnemonicParsing="false" onAction="#handlePlayButton1" text="Play Song" />
+            <Button fx:id="playSong1" layoutX="355.0" layoutY="291.0" mnemonicParsing="false" onAction="#handlePlayButton2" text="Play Song" />
+            <Button fx:id="playSong2" layoutX="676.0" layoutY="291.0" mnemonicParsing="false" onAction="#handlePlayButton3" text="Play Song" />
+            <Button fx:id="playSong3" layoutX="516.0" layoutY="291.0" mnemonicParsing="false" onAction="#handlePlayButton4" text="Play Song" />
+            <Button fx:id="playSong4" layoutX="196.0" layoutY="372.0" mnemonicParsing="false" onAction="#handlePlayButton5" text="Play Song" />
+            <Button fx:id="playSong5" layoutX="355.0" layoutY="372.0" mnemonicParsing="false" onAction="#handlePlayButton6" text="Play Song" />
+            <Button fx:id="playSong6" layoutX="515.0" layoutY="372.0" mnemonicParsing="false" onAction="#handlePlayButton7" text="Play Song" />
+            <Button fx:id="playSong7" layoutX="676.0" layoutY="372.0" mnemonicParsing="false" onAction="#handlePlayButton8" text="Play Song" />
+
+
                 <!-- Repeat the styles for the rest of the elements -->
                 <!-- ... -->
             </children>

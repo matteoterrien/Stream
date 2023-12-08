@@ -10,7 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class homeWindowClass extends Application {
+public class homeWindowClass extends Application {      
 
     public static Connection connect;
 
