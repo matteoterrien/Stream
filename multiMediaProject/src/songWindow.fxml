@@ -38,7 +38,6 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
@@ -50,11 +49,7 @@
     <MenuBar VBox.vgrow="NEVER">
       <menus>
         <Menu mnemonicParsing="false" text="Home" />
-            <Menu fx:id="handleBackButton" mnemonicParsing="false" onAction="#handleBackButton" text="Back">
-              <items>
-                <MenuItem mnemonicParsing="false" text="Action 1" />
-              </items>
-            </Menu>
+            <Menu fx:id="handleBackButton" mnemonicParsing="false" onAction="#handleBackButton" text="Back" />
       </menus>
     </MenuBar>
     <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="474.0" prefWidth="748.0" VBox.vgrow="ALWAYS">
@@ -81,7 +76,10 @@
             <Label layoutX="21.0" layoutY="25.0" text="Select sorting method" />
             <TextField fx:id="songText" layoutX="26.0" layoutY="400.0" prefHeight="26.0" prefWidth="100.0" promptText="Enter Song" />
             <TextField fx:id="playlist" layoutX="26.0" layoutY="435.0" prefHeight="26.0" prefWidth="100.0" promptText="Enter Playlist" />
-            <Button fx:id="add" layoutX="26.0" layoutY="470.0" mnemonicParsing="false" onAction="#handleAddButton" prefHeight="26.0" prefWidth="100.0" text="Insert Song" />
+            <Button fx:id="add" layoutX="26.0" layoutY="470.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="100.0" text="Insert Song" />
+            <Button fx:id="search" layoutX="26.0" layoutY="119.0" mnemonicParsing="false" onAction="#handleSearchSong" prefHeight="26.0" prefWidth="100.0" text="Search Songs" />
+            <TextField fx:id="searchSongField" layoutX="26.0" layoutY="85.0" prefHeight="26.0" prefWidth="100.0" promptText="Enter Song" />
+            <TextField fx:id="limit" layoutX="44.0" layoutY="153.0" prefHeight="26.0" prefWidth="64.0" promptText="Set Limit" />
       </children>
     </AnchorPane>
   </children>
