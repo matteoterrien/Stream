@@ -85,7 +85,7 @@ public class ReadFile {
             playlist.setPlaylistID(playlists.getPlaylists().size() + 1);
             playlist.setPlaylistTitle("\'" + "Playlist" + playlist.getPlaylistID() + "\'");
             for (int j = 0; j < 15; j++) {
-                int songID = random.nextInt(songs.getSongs().size() + 1) + 1;
+                int songID = random.nextInt(songs.getSongs().size()) + 1;
                 playlist.addSong(songs.getSongs().get(songID));
                 // System.out.println(songs.getSongs().get(songID).getName());
             }

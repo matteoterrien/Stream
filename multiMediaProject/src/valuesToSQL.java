@@ -153,7 +153,6 @@ public class valuesToSQL {
                 str += ", ";
 
         }
-        System.out.println(str);
         Connection connection; // Initialize and manage your database connection
         try {
             // Class.forName("com.mysql.jdbc.Driver");
@@ -170,7 +169,7 @@ public class valuesToSQL {
     }
 
     public void sendPlaylistSongsValues() throws SQLException {
-        String str = "INSERT INTO PlaylistSongs (playlistID, songID) VALUES ";
+        String str = "INSERT INTO PlaylistsSongs (playlistID, songID) VALUES ";
         System.out.println("\n");
         for (int i = 1; i < playlists.getPlaylists().size() + 1; i++) {
             Playlists.Playlist playlist = playlists.getPlaylist(i);
@@ -185,7 +184,8 @@ public class valuesToSQL {
             // if (i < playlists.getPlaylists().size() - 1)
             // str += ", ";
         }
-        System.out.println(str);
+        while (str.charAt(str.length() - 1) == ',' || str.charAt(str.length() - 1) == ' ')
+            str = str.substring(0, str.length() - 1);
         Connection connection; // Initialize and manage your database connection
         try {
             // Class.forName("com.mysql.jdbc.Driver");
